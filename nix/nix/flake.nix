@@ -27,7 +27,6 @@
 	];
 	casks = [
 	  "firefox"
-	  "google-chrome"
 	  "the-unarchiver"
 	];
 	masApps = {
@@ -45,14 +44,11 @@
 
       system.defaults = {
 	dock.autohide = true;
-	finder.AppleShowAllExtensions = true;
 	finder.FXPreferredViewStyle = "clmv";
 	loginwindow.GuestEnabled = false;
 	NSGlobalDomain.AppleICUForce24HourTime = true;
 	NSGlobalDomain.AppleInterfaceStyle = "Dark";
 	NSGlobalDomain.KeyRepeat = 2;
-	screencapture.location = "~/Pictures/screenshots";
-	screensaver.askForPasswordDelay = 10;
       };
 
       # Auto upgrade nix package and the daemon service.
@@ -75,9 +71,6 @@
 
       # The platform the configuration will be used on.
       nixpkgs.hostPlatform = "aarch64-darwin";
-
-      security.pam.enableSudoTouchIdAuth = true;
-
     };
   in
   {
