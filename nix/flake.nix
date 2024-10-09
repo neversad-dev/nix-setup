@@ -44,15 +44,67 @@
         ];
 
       system.defaults = {
-	dock.autohide = true;
-	finder.AppleShowAllExtensions = true;
-	finder.FXPreferredViewStyle = "clmv";
+        LaunchServices.LSQuarantine = false;
+	NSGlobalDomain = {
+	  AppleICUForce24HourTime = true;
+	  AppleInterfaceStyle = "Dark";
+	  AppleMeasurementUnits = "Centimeters";
+	  AppleMetricUnits = 1;
+	  AppleShowAllExtensions = true;
+	  AppleShowAllFiles = true;
+	  AppleTemperatureUnit = "Celsius";
+	  KeyRepeat = 2;
+	  _HIHideMenuBar = false;
+	};
+ 	dock = {
+	  autohide = true;	
+	  autohide-time-modifier = 0.0;
+	  launchanim = false;
+	  mineffect = "scale";
+	  mru-spaces = false;
+	  orientation = "left";
+	  persistent-apps = [];
+	  persistent-others = [];
+	  show-recents = false;
+	  tilesize = 10;
+	  wvous-tl-corner = 1;
+	  wvous-tr-corner = 1;
+	  wvous-bl-corner = 1;
+	  wvous-br-corner = 1;	
+	};
+	finder = {
+	  AppleShowAllExtensions = true;
+	  AppleShowAllFiles = true;
+	  CreateDesktop = false;
+	  FXDefaultSearchScope = "SCcf";
+	  FXEnableExtensionChangeWarning = false;
+	  FXPreferredViewStyle = "clmv";
+	  QuitMenuItem = true;
+	  ShowPathbar = true;
+	  ShowStatusBar = true;
+	  _FXSortFoldersFirst = true;
+	};
+	WindowManager = {
+	  EnableStandardClickToShowDesktop = false;
+	  StandardHideDesktopIcons = true;
+	  StandardHideWidgets = true;
+	};
 	loginwindow.GuestEnabled = false;
-	NSGlobalDomain.AppleICUForce24HourTime = true;
-	NSGlobalDomain.AppleInterfaceStyle = "Dark";
-	NSGlobalDomain.KeyRepeat = 2;
+	menuExtraClock = {
+	  IsAnalog = false;
+	  Show24Hour = true;
+	  ShowDate = 1;     # 0 = When space allows 1 = Always 2 = Never
+	};
 	screencapture.location = "~/Pictures/screenshots";
 	screensaver.askForPasswordDelay = 10;
+	spaces.spans-displays = false;
+	trackpad.TrackpadThreeFingerDrag = true;
+	universalaccess.reduceMotion = true;
+      };
+
+      system.keyboard = {
+        enableKeyMapping = true;
+        remapCapsLockToControl = true;
       };
 
       # Auto upgrade nix package and the daemon service.
@@ -103,7 +155,7 @@
             # Optional: Enable fully-declarative tap management
             #
             # With mutableTaps disabled, taps can no longer be added imperatively with `brew tap`.
-           #  mutableTaps = false;
+            # mutableTaps = false;
 	  };
         }
       ];
