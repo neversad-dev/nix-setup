@@ -19,10 +19,16 @@
       # $ nix-env -qaP | grep wget
       environment.systemPackages =
         [ 
-          pkgs.alacritty
+          pkgs.kitty
+	  pkgs.starship
 	  pkgs.neovim
           pkgs.tmux 
 	  pkgs.git
+	  pkgs.raycast
+	  pkgs.alt-tab-macos
+	  pkgs.hidden-bar
+	  pkgs.monitorcontrol
+	  pkgs.stats
         ];
 
       homebrew = {
@@ -33,6 +39,8 @@
 	  "firefox"
 	  "google-chrome"
 	  "the-unarchiver"
+	  "chatgpt"
+	  "itsycal"
 	];
 	masApps = {
 	  "Bitwarden" = 1352778147;
@@ -44,7 +52,7 @@
 
       fonts.packages = 
         [
-          pkgs.hackgen-nf-font
+          pkgs.meslo-lgs-nf
         ];
 
       system.defaults = {
@@ -97,7 +105,8 @@
 	menuExtraClock = {
 	  IsAnalog = false;
 	  Show24Hour = true;
-	  ShowDate = 1;     # 0 = When space allows 1 = Always 2 = Never
+	  ShowDate = 2;     # 0 = When space allows 1 = Always 2 = Never
+	  ShowDayOfWeek = false;
 	};
 	screencapture.location = "~/Pictures/screenshots";
 	screensaver.askForPasswordDelay = 10;
@@ -133,6 +142,8 @@
       nixpkgs.hostPlatform = "aarch64-darwin";
 
       security.pam.enableSudoTouchIdAuth = true;
+
+      nixpkgs.config.allowUnfree = true;
 
       users.users.tinker = {
   	name = "tinker";
