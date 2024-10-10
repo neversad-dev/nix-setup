@@ -25,6 +25,7 @@
     zsh-autocomplete
     zsh-syntax-highlighting
     fzf
+    zoxide
   ];
 
   programs.zsh = {
@@ -41,6 +42,9 @@
       
       # Set up fzf key bindings and fuzzy completion
       eval "$(fzf --zsh)"
+
+      # Set up zoxide for better cd
+      eval "$(zoxide init --cmd cd zsh)"
     '';
 
   };
