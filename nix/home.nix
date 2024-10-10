@@ -24,6 +24,7 @@
     zsh-autosuggestions
     zsh-autocomplete
     zsh-syntax-highlighting
+    fzf
   ];
 
   programs.zsh = {
@@ -37,6 +38,9 @@
       source ${pkgs.zsh-autosuggestions}/share/zsh-autosuggestions/zsh-autosuggestions.zsh
       source ${pkgs.zsh-autocomplete}/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
       source ${pkgs.zsh-syntax-highlighting}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+      
+      # Set up fzf key bindings and fuzzy completion
+      eval "$(fzf --zsh)"
     '';
 
   };
