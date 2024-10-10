@@ -26,6 +26,7 @@
     zsh-syntax-highlighting
     fzf
     zoxide
+    bat
   ];
 
   programs.zsh = {
@@ -63,5 +64,6 @@
   # Enable Starship
   programs.starship.enable = true;
 
-
+  # Bat (better cat)
+  home.file.".config/bat".source = ../bat;
 }

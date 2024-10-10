@@ -20,6 +20,7 @@
       environment.systemPackages =
         [
 	  pkgs.zsh
+	  pkgs.wget
 	  pkgs.zsh-autosuggestions
 	  pkgs.zsh-autocomplete
 	  pkgs.zsh-syntax-highlighting
@@ -33,6 +34,7 @@
 	  pkgs.hidden-bar
 	  pkgs.monitorcontrol
 	  pkgs.stats
+
         ];
 
       homebrew = {
