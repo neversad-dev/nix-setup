@@ -1,1 +1,1 @@
-darwin-rebuild switch --flake ./nix#mbp
+darwin-rebuild switch --flake .#mbp
