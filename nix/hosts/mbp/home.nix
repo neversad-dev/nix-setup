@@ -111,18 +111,18 @@
 
   
   # Create a symlink for the starship.toml file
-  home.file.".config/starship.toml".source = ../dotfiles/starship.toml;
+  home.file.".config/starship.toml".source = ./dotfiles/starship.toml;
 
   # Create a symlink for the kitty config
-  home.file.".config/kitty".source = ../dotfiles/kitty;
+  home.file.".config/kitty".source = ./dotfiles/kitty;
 
   # Create a symlink for git files
-  home.file.".gitignore".source = ../dotfiles/git/.gitignore;
-  home.file.".gitconfig".source = ../dotfiles/git/.gitconfig;
+  home.file.".gitignore".source = ./dotfiles/git/.gitignore;
+  home.file.".gitconfig".source = ./dotfiles/git/.gitconfig;
 
   # Enable Starship
   programs.starship.enable = true;
 
   # Bat (better cat)
-  home.file.".config/bat".source = ../dotfiles/bat;
+  home.file.".config/bat".source = ./dotfiles/bat;
 }
