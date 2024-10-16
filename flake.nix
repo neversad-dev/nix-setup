@@ -1,56 +1,88 @@
-#
-#  flake.nix *
-#   ├─ ./hosts
-#   │   └─ default.nix
-#   ├─ ./darwin
-#   │   └─ default.nix
-#   └─ ./nix
-#       └─ default.nix
-#
-
 {
-	description = "Nix and Nix Darwin System Flake Configuration";
+  description = "Nix for macOS configuration";
 
-	inputs = {
-		nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable"; # Nix Packages (Default)
-		# nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable"; # Unstable Nix Packages
-		nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-24.05"; # Unstable Nix Packages
+  ##################################################################################################################
+  #
+  # Want to know Nix in details? Looking for a beginner-friendly tutorial?
+  # Check out https://github.com/ryan4yin/nixos-and-flakes-book !
+  #
+  ##################################################################################################################
 
-		# User Environment Manager
-		home-manager = {
-			url = "github:nix-community/home-manager";
-			inputs.nixpkgs.follows = "nixpkgs";
-		};
+  # the nixConfig here only affects the flake itself, not the system configuration!
+  nixConfig = {
+    substituters = [
+      # Query the mirror of USTC first, and then the official cache.
+      "https://mirrors.ustc.edu.cn/nix-channels/store"
+      "https://cache.nixos.org"
+    ];
+  };
 
-		# Stable User Environment Manager
-		home-manager-stable = {
-			url = "github:nix-community/home-manager/release-23.11";
-			inputs.nixpkgs.follows = "nixpkgs-stable";
-		};
+  # This is the standard format for flake.nix. `inputs` are the dependencies of the flake,
+  # Each item in `inputs` will be passed as a parameter to the `outputs` function after being pulled and built.
+  inputs = {
+    # nixpkgs-darwin.url = "github:nixos/nixpkgs/nixpkgs-unstable";
+    nixpkgs-darwin.url = "github:nixos/nixpkgs/nixpkgs-24.05-darwin";
 
-		# MacOS Package Management
-		darwin = {
-			url = "github:lnl7/nix-darwin/master";
-			inputs.nixpkgs.follows = "nixpkgs";
-		};
-	};
+    # home-manager, used for managing user configuration
+    home-manager = {
+      url = "github:nix-community/home-manager/release-24.05";
+      # The `follows` keyword in inputs is used for inheritance.
+      # Here, `inputs.nixpkgs` of home-manager is kept consistent with the `inputs.nixpkgs` of the current flake,
+      # to avoid problems caused by different versions of nixpkgs dependencies.
+      inputs.nixpkgs.follows = "nixpkgs-darwin";
+    };
 
-	outputs = inputs@{ self, nixpkgs, nixpkgs-stable, home-manager, home-manager-stable, darwin}:
-	let
-		# Variables Used In Flake
-		vars = {
-			user = "tinker";
-			location = "$HOME/.setup";
-			terminal = "kitty";
-			editor = "nvim";
-		};
-  in
-  {
-	darwinConfigurations = (
-		import ./darwin {
-		inherit (nixpkgs) lib;
-		inherit inputs nixpkgs nixpkgs-stable home-manager darwin vars;  # nixvim
-		}
-	);
+    darwin = {
+      url = "github:lnl7/nix-darwin";
+      inputs.nixpkgs.follows = "nixpkgs-darwin";
+    };
+  };
+
+  # The `outputs` function will return all the build results of the flake.
+  # A flake can have many use cases and different types of outputs,
+  # parameters in `outputs` are defined in `inputs` and can be referenced by their names.
+  # However, `self` is an exception, this special parameter points to the `outputs` itself (self-reference)
+  # The `@` syntax here is used to alias the attribute set of the inputs's parameter, making it convenient to use inside the function.
+  outputs = inputs @ {
+    self,
+    nixpkgs,
+    darwin,
+    home-manager,
+    ...
+  }: let
+    # TODO replace with your own username, email, system, and hostname
+    username = "tinker";
+    useremail = "tinker@null.computer";
+    system = "aarch64-darwin"; # aarch64-darwin or x86_64-darwin
+    hostname = "mbp";
+
+    specialArgs =
+      inputs
+      // {
+        inherit username useremail hostname;
+      };
+  in {
+    darwinConfigurations."${hostname}" = darwin.lib.darwinSystem {
+      inherit system specialArgs;
+      modules = [
+        ./modules/nix-core.nix
+        ./modules/system.nix
+        ./modules/apps.nix
+        # ./modules/homebrew-mirror.nix # comment this line if you don't need a homebrew mirror
+        ./modules/host-users.nix
+
+        # home manager
+        home-manager.darwinModules.home-manager
+        {
+          home-manager.useGlobalPkgs = true;
+          home-manager.useUserPackages = true;
+          home-manager.extraSpecialArgs = specialArgs;
+          home-manager.users.${username} = import ./home;
+        }
+      ];
+    };
+
+    # nix code formatter
+    formatter.${system} = nixpkgs.legacyPackages.${system}.alejandra;
   };
 }
