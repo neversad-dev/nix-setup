@@ -15,7 +15,7 @@
   # imports = (import ./modules);
 
   users.users.${vars.user} = {
-	name = vars.user;
+	  name = vars.user;
     home = "/Users/${vars.user}";
     shell = pkgs.zsh;
   };

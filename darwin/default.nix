@@ -41,7 +41,7 @@ in
         home-manager.darwinModules.home-manager {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
-		  home-manager.users.tinker = import ./home.nix;
+		      home-manager.users."${vars.user}" = import ./home.nix;
         }
       ];
     };

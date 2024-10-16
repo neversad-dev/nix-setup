@@ -33,11 +33,9 @@
 			url = "github:lnl7/nix-darwin/master";
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
-
-		nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
 	};
 
-	outputs = inputs@{ self, nixpkgs, nixpkgs-stable, home-manager, home-manager-stable, darwin, nix-homebrew}:
+	outputs = inputs@{ self, nixpkgs, nixpkgs-stable, home-manager, home-manager-stable, darwin}:
 	let
 		# Variables Used In Flake
 		vars = {
