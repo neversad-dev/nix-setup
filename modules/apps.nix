@@ -17,6 +17,12 @@
     neovim
     git
     just # use Justfile to simplify nix-darwin's commands
+
+    # messengers
+    telegram-desktop
+    discord
+
+    google-chrome
   ];
   environment.variables.EDITOR = "nvim";
   environment.variables.VISUAL = "nvim";
@@ -49,8 +55,8 @@
       # WeCom = 1189898970;  # Wechat for Work
       # TecentMetting = 1484048379;
       # QQMusic = 595615424;
-      "wireguard" = 1451685025;
-      "Bitwarden" = 1352778147;
+      wireguard = 1451685025;
+      Bitwarden = 1352778147;
     };
 
     taps = [
@@ -70,13 +76,12 @@
     # TODO Feel free to add your favorite apps here.
     casks = [
       "firefox"
-      "google-chrome"
       "visual-studio-code"
       "the-unarchiver"
 
-      # IM & audio & remote desktop & meeting
-      # "telegram"
-      # "discord"
+      # messengers
+      "viber"
+      "signal"
 
       # "anki"
       # "iina" # video player
