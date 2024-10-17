@@ -24,6 +24,7 @@
       # customize dock
       dock = {
         autohide = true;
+        autohide-delay  = 1.0;
         autohide-time-modifier = 0.0;
         launchanim = false;
         mineffect = "scale";
@@ -42,8 +43,6 @@
 
       # customize finder
       finder = {
-        _FXSortFoldersFirst = true;
-        _FXShowPosixPathInTitle = true; # show full path in finder title
         AppleShowAllExtensions = true; # show all file extensions
         AppleShowAllFiles = true;
         CreateDesktop = false;
@@ -53,6 +52,9 @@
         QuitMenuItem = true; # enable quit menu item
         ShowPathbar = true; # show path bar
         ShowStatusBar = true; # show status bar
+
+        _FXShowPosixPathInTitle = true; # show full path in finder title
+        _FXSortFoldersFirst = true;
       };
 
       # customize trackpad
@@ -66,39 +68,49 @@
       # Incomplete list of macOS `defaults` commands :
       #   https://github.com/yannbertrand/macos-defaults
       NSGlobalDomain = {
-        # `defaults read NSGlobalDomain "xxx"`
-        _HIHideMenuBar = false;
-        "com.apple.swipescrolldirection" = true; # enable natural scrolling(default to true)
-        "com.apple.sound.beep.feedback" = 0; # disable beep sound when pressing volume up/down key
-        "com.apple.mouse.tapBehavior" = 1;
-        "com.apple.trackpad.enableSecondaryClick" = true;
+        AppleEnableMouseSwipeNavigateWithScrolls = false; # Enables swiping left or right with two fingers to navigate backward or forward
+        AppleEnableSwipeNavigateWithScrolls = false; # Enables swiping left or right with two fingers to navigate backward or forward
         AppleICUForce24HourTime = true;
         AppleInterfaceStyle = "Dark"; # dark mode
+        AppleKeyboardUIMode = 3; # Mode 3 enables full keyboard control.
         AppleMeasurementUnits = "Centimeters";
-        AppleTemperatureUnit = "Celsius";
         AppleMetricUnits = 1;
+        ApplePressAndHoldEnabled = true; # enable press and hold
+        AppleScrollerPagingBehavior = false; # Jump to the spot that’s clicked on the scroll bar. The default is false.
         AppleShowAllExtensions = true;
         AppleShowAllFiles = true;
-
-        AppleKeyboardUIMode = 3; # Mode 3 enables full keyboard control.
-        ApplePressAndHoldEnabled = true; # enable press and hold
-
-        # If you press and hold certain keyboard keys when in a text area, the key’s character begins to repeat.
-        # This is very useful for vim users, they use `hjkl` to move cursor.
+        AppleShowScrollBars = "Always"; # When to show the scrollbars. Options are ‘WhenScrolling’, ‘Automatic’ and ‘Always’.
+        AppleSpacesSwitchOnActivate = true; # Whether or not to switch to a workspace that has a window of the application open, that is switched to. The default is true.
+        AppleTemperatureUnit = "Celsius";
+        AppleWindowTabbingMode = "fullscreen"; # Sets the window tabbing when opening a new document: ‘manual’, ‘always’, or ‘fullscreen’. The default is ‘fullscreen’.
         # sets how long it takes before it starts repeating.
         InitialKeyRepeat = 15; # normal minimum is 15 (225 ms), maximum is 120 (1800 ms)
         # sets how fast it repeats once it starts.
-        KeyRepeat = 3; # normal minimum is 2 (30 ms), maximum is 120 (1800 ms)
+        KeyRepeat = 2; # normal minimum is 2 (30 ms), maximum is 120 (1800 ms)
 
-        NSAutomaticCapitalizationEnabled = false; # disable auto capitalization(自动大写)
-        NSAutomaticDashSubstitutionEnabled = false; # disable auto dash substitution(智能破折号替换)
-        NSAutomaticPeriodSubstitutionEnabled = false; # disable auto period substitution(智能句号替换)
-        NSAutomaticQuoteSubstitutionEnabled = false; # disable auto quote substitution(智能引号替换)
-        NSAutomaticSpellingCorrectionEnabled = false; # disable auto spelling correction(自动拼写检查)
-        NSNavPanelExpandedStateForSaveMode = true; # expand save panel by default(保存文件时的路径选择/文件名输入页)
+        NSAutomaticCapitalizationEnabled = false; # disable auto capitalization
+        NSAutomaticDashSubstitutionEnabled = false; # disable auto dash substitution
+        NSAutomaticInlinePredictionEnabled = false; # Whether to enable inline predictive text. The default is true.
+        NSAutomaticPeriodSubstitutionEnabled = false; # disable auto period substitution
+        NSAutomaticQuoteSubstitutionEnabled = false; # disable auto quote substitution
+        NSAutomaticSpellingCorrectionEnabled = false; # disable auto spelling correction
+        NSAutomaticWindowAnimationsEnabled = false; # Whether to animate opening and closing of windows and popovers. The default is true.
+        NSDisableAutomaticTermination = false; # Whether to disable the automatic termination of inactive apps.
+        NSDocumentSaveNewDocumentsToCloud = false; # Whether to save new documents to iCloud by default. The default is true.
+        NSNavPanelExpandedStateForSaveMode = true; # expand save panel by default
         NSNavPanelExpandedStateForSaveMode2 = true;
+        NSScrollAnimationEnabled = true;
+        NSTableViewDefaultSizeMode = 2; # Sets the size of the finder sidebar icons: 1 (small), 2 (medium) or 3 (large). The default is 3.
+
+        _HIHideMenuBar = false;
+        "com.apple.mouse.tapBehavior" = 1; # Configures the trackpad tap behavior. Mode 1 enables tap to click.
+        "com.apple.sound.beep.feedback" = 0; # disable beep sound when pressing volume up/down key
+        "com.apple.swipescrolldirection" = true; # enable natural scrolling(default to true)
+        "com.apple.trackpad.enableSecondaryClick" = true;
       };
+      SoftwareUpdate.AutomaticallyInstallMacOSUpdates = true;
       WindowManager = {
+        AppWindowGroupingBehavior = false;
         EnableStandardClickToShowDesktop = false;
         StandardHideDesktopIcons = true;
         StandardHideWidgets = true;
@@ -108,7 +120,24 @@
         Show24Hour = true;
         ShowDate = 2; # 0 = When space allows 1 = Always 2 = Never
         ShowDayOfWeek = false;
+        ShowSeconds = false;
       };
+      screencapture = {
+        location = "~/Pictures/screenshots";
+        show-thumbnail = true;
+          type = "png";
+      };
+      screensaver = {
+        # Require password immediately after sleep or screen saver begins
+        askForPassword = true;
+        askForPasswordDelay = 0;
+      };
+      spaces.spans-displays = false; # false = each physical display has a separate space (Mac default) true = one space spans across all physical displays
+      loginwindow = {
+        GuestEnabled = false; # disable guest user
+        SHOWFULLNAME = false; # show full name in login window
+      };
+      universalaccess.reduceMotion = true;
 
       # Customize settings that not supported by nix-darwin directly
       # see the source code of this project to get more undocumented options:
@@ -117,46 +146,10 @@
       # All custom entries can be found by running `defaults read` command.
       # or `defaults read xxx` to read a specific domain.
       CustomUserPreferences = {
-        ".GlobalPreferences" = {
-          # automatically switch to a new space when switching to the application
-          AppleSpacesSwitchOnActivate = true;
-        };
-        NSGlobalDomain = {
-          # Add a context menu item for showing the Web Inspector in web views
-          WebKitDeveloperExtras = true;
-        };
-        "com.apple.finder" = {
-          ShowExternalHardDrivesOnDesktop = true;
-          ShowHardDrivesOnDesktop = true;
-          ShowMountedServersOnDesktop = true;
-          ShowRemovableMediaOnDesktop = true;
-          _FXSortFoldersFirst = true;
-          # When performing a search, search the current folder by default
-          FXDefaultSearchScope = "SCcf";
-        };
         "com.apple.desktopservices" = {
           # Avoid creating .DS_Store files on network or USB volumes
           DSDontWriteNetworkStores = true;
           DSDontWriteUSBStores = true;
-        };
-        "com.apple.spaces" = {
-          "spans-displays" = 0; # Display have seperate spaces
-        };
-        "com.apple.WindowManager" = {
-          EnableStandardClickToShowDesktop = 0; # Click wallpaper to reveal desktop
-          StandardHideDesktopIcons = 1; # Hide items on desktop
-          HideDesktop = 1; # Hide items on desktop & stage manager
-          StageManagerHideWidgets = 1;
-          StandardHideWidgets = 1;
-        };
-        "com.apple.screensaver" = {
-          # Require password immediately after sleep or screen saver begins
-          askForPassword = 1;
-          askForPasswordDelay = 0;
-        };
-        "com.apple.screencapture" = {
-          location = "~/Pictures/screenshots";
-          type = "png";
         };
         "com.apple.AdLib" = {
           allowApplePersonalizedAdvertising = false;
@@ -213,11 +206,6 @@
           };
         };
       };
-      loginwindow = {
-        GuestEnabled = false; # disable guest user
-        SHOWFULLNAME = true; # show full name in login window
-      };
-      universalaccess.reduceMotion = true;
     };
 
     # keyboard settings is not very useful on macOS
@@ -227,8 +215,8 @@
       enableKeyMapping = true; # enable key mapping so that we can use `option` as `control`
 
       # NOTE: do NOT support remap capslock to both control and escape at the same time
-      remapCapsLockToControl = false; # remap caps lock to control, useful for emac users
-      remapCapsLockToEscape = true; # remap caps lock to escape, useful for vim users
+      remapCapsLockToControl = true; # remap caps lock to control, useful for emac users
+      remapCapsLockToEscape = false; # remap caps lock to escape, useful for vim users
 
       # swap left command and left alt
       # so it matches common keyboard layout: `ctrl | command | alt`
