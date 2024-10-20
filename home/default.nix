@@ -4,7 +4,9 @@
     ./shell.nix
     ./core.nix
     ./git.nix
+    ./kitty.nix
     ./starship.nix
+    ./vscode.nix
   ];
 
   # Home Manager needs a bit of information about you and the

@@ -3,8 +3,6 @@
   #
   #  Install all apps and packages here.
   #
-  # TODO Fell free to modify this file to fit your needs.
-  #
   ##########################################################################
 
   # Install packages from nix's official package repository.
@@ -14,6 +12,7 @@
   #
   # Related Discussion: https://discourse.nixos.org/t/darwin-again/29331
   environment.systemPackages = with pkgs; [
+    kitty
     neovim
     git
     just # use Justfile to simplify nix-darwin's commands
@@ -23,6 +22,10 @@
     discord
 
     google-chrome
+    raycast
+    alttab
+    hidden-bar
+    stats
   ];
   environment.variables.EDITOR = "nvim";
   environment.variables.VISUAL = "nvim";
@@ -46,15 +49,7 @@
     # otherwise Apple Store will refuse to install them.
     # For details, see https://github.com/mas-cli/mas
     masApps = {
-      # TODO Feel free to add your favorite apps here.
-
       Xcode = 497799835;
-      # Wechat = 836500024;
-      # NeteaseCloudMusic = 944848654;
-      # QQ = 451108668;
-      # WeCom = 1189898970;  # Wechat for Work
-      # TecentMetting = 1484048379;
-      # QQMusic = 595615424;
       wireguard = 1451685025;
       Bitwarden = 1352778147;
     };
@@ -64,16 +59,12 @@
     ];
 
     # `brew install`
-    # TODO Feel free to add your favorite apps here.
     brews = [
       "wget" # download tool
       "curl" # no not install curl via nixpkgs, it's not working well on macOS!
-      # "aria2" # download tool
-      # "httpie" # http client
     ];
 
     # `brew install --cask`
-    # TODO Feel free to add your favorite apps here.
     casks = [
       "firefox"
       "visual-studio-code"
@@ -83,18 +74,9 @@
       "viber"
       "signal"
 
-      # "anki"
-      # "iina" # video player
-      # "raycast" # (HotKey: alt/option + space)search, caculate and run scripts(with many plugins)
-      # "stats" # beautiful system monitor
-      # "eudic" # 欧路词典
-
-      # Development
-      # "insomnia" # REST client
-      # "wireshark" # network analyzer
 
       "chatgpt"
-      "itsycal"
-    ];
+      "itsycal"  # TODO: seems like this is not installed automatically. Recheck
+    ]; 
   };
 }
