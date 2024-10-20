@@ -75,7 +75,7 @@
         AppleKeyboardUIMode = 3; # Mode 3 enables full keyboard control.
         AppleMeasurementUnits = "Centimeters";
         AppleMetricUnits = 1;
-        ApplePressAndHoldEnabled = true; # enable press and hold
+        ApplePressAndHoldEnabled = false; # enable press and hold. It will display a popup allowing you pick a special character
         AppleScrollerPagingBehavior = false; # Jump to the spot that’s clicked on the scroll bar. The default is false.
         AppleShowAllExtensions = true;
         AppleShowAllFiles = true;
@@ -108,13 +108,16 @@
         "com.apple.swipescrolldirection" = true; # enable natural scrolling(default to true)
         "com.apple.trackpad.enableSecondaryClick" = true;
       };
+
       SoftwareUpdate.AutomaticallyInstallMacOSUpdates = true;
+
       WindowManager = {
         AppWindowGroupingBehavior = false;
         EnableStandardClickToShowDesktop = false;
         StandardHideDesktopIcons = true;
         StandardHideWidgets = true;
       };
+
       menuExtraClock = {
         IsAnalog = false;
         Show24Hour = true;
@@ -122,21 +125,26 @@
         ShowDayOfWeek = false;
         ShowSeconds = false;
       };
+
       screencapture = {
         location = "~/Pictures/screenshots";
         show-thumbnail = true;
           type = "png";
       };
+
       screensaver = {
         # Require password immediately after sleep or screen saver begins
         askForPassword = true;
         askForPasswordDelay = 0;
       };
+
       spaces.spans-displays = false; # false = each physical display has a separate space (Mac default) true = one space spans across all physical displays
+      
       loginwindow = {
         GuestEnabled = false; # disable guest user
         SHOWFULLNAME = false; # show full name in login window
       };
+
       universalaccess.reduceMotion = true;
 
       # Customize settings that not supported by nix-darwin directly
@@ -245,7 +253,7 @@
       # icon fonts
       material-design-icons
       font-awesome
-      # meslo-lgs-nf
+      meslo-lgs-nf
 
       # nerdfonts
       # https://github.com/NixOS/nixpkgs/blob/nixos-24.05/pkgs/data/fonts/nerdfonts/shas.nix
