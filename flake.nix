@@ -36,6 +36,9 @@
       url = "github:lnl7/nix-darwin";
       inputs.nixpkgs.follows = "nixpkgs-darwin";
     };
+
+    # theme
+    catppuccin.url = "github:catppuccin/nix";
   };
 
   # The `outputs` function will return all the build results of the flake.
@@ -68,7 +71,6 @@
         ./modules/nix-core.nix
         ./modules/system.nix
         ./modules/apps.nix
-        # ./modules/homebrew-mirror.nix # comment this line if you don't need a homebrew mirror
         ./modules/host-users.nix
 
         # home manager

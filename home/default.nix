@@ -7,6 +7,7 @@
     ./kitty.nix
     ./starship.nix
     ./vscode.nix
+    ./catppuccin.nix
   ];
 
   # Home Manager needs a bit of information about you and the
