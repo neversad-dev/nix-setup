@@ -24,7 +24,7 @@
       # customize dock
       dock = {
         autohide = true;
-        autohide-delay  = 1.0;
+        autohide-delay = 1.0;
         autohide-time-modifier = 0.0;
         launchanim = false;
         mineffect = "scale";
@@ -129,7 +129,7 @@
       screencapture = {
         location = "~/Pictures/screenshots";
         show-thumbnail = true;
-          type = "png";
+        type = "png";
       };
 
       screensaver = {
@@ -139,7 +139,7 @@
       };
 
       spaces.spans-displays = false; # false = each physical display has a separate space (Mac default) true = one space spans across all physical displays
-      
+
       loginwindow = {
         GuestEnabled = false; # disable guest user
         SHOWFULLNAME = false; # show full name in login window

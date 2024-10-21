@@ -39,6 +39,12 @@
 
     # theme
     catppuccin.url = "github:catppuccin/nix";
+
+    catppuccin-vsc.url = "https://flakehub.com/f/catppuccin/vscode/*.tar.gz";
+    catppuccin-vsc.inputs.nixpkgs.follows = "nixpkgs";
+
+    nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
+    nix-vscode-extensions.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   # The `outputs` function will return all the build results of the flake.
@@ -73,11 +79,21 @@
         ./modules/apps.nix
         ./modules/host-users.nix
 
+        ({ pkgs, ... }: {
+          nixpkgs.overlays = [ 
+            inputs.catppuccin-vsc.overlays.default 
+          inputs.nix-vscode-extensions.overlays.default
+            ];
+
+          # Other Nix-Darwin configuration...
+        })
+
         # home manager
         home-manager.darwinModules.home-manager
         {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
+          home-manager.backupFileExtension = "backup";
           home-manager.extraSpecialArgs = specialArgs;
           home-manager.users.${username} = import ./home;
         }

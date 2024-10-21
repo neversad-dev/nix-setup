@@ -67,16 +67,15 @@
     # `brew install --cask`
     casks = [
       "firefox"
-      "visual-studio-code"
       "the-unarchiver"
+      "visual-studio-code"
 
       # messengers
       "viber"
       "signal"
 
-
       "chatgpt"
-      "itsycal"  # TODO: seems like this is not installed automatically. Recheck
-    ]; 
+      "itsycal" # TODO: seems like this is not installed automatically. Recheck
+    ];
   };
 }

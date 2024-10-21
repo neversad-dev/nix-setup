@@ -1,11 +1,10 @@
 {catppuccin, ...}: {
-    imports = [
-        catppuccin.homeManagerModules.catppuccin
-    ];
+  imports = [
+    catppuccin.homeManagerModules.catppuccin
+  ];
 
-    catppuccin = {
-        enable = true;
-        flavor = "mocha";
-    };
-
+  catppuccin = {
+    enable = true;
+    flavor = "mocha";
+  };
 }
