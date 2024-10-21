@@ -253,7 +253,6 @@
       # icon fonts
       material-design-icons
       font-awesome
-      meslo-lgs-nf
 
       # nerdfonts
       # https://github.com/NixOS/nixpkgs/blob/nixos-24.05/pkgs/data/fonts/nerdfonts/shas.nix
@@ -263,8 +262,9 @@
           "NerdFontsSymbolsOnly"
           # Characters
           "FiraCode"
-          "JetBrainsMono"
           "Iosevka"
+          "Meslo"
+          "Hack"
         ];
       })
     ];

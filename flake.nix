@@ -79,11 +79,11 @@
         ./modules/apps.nix
         ./modules/host-users.nix
 
-        ({ pkgs, ... }: {
-          nixpkgs.overlays = [ 
-            inputs.catppuccin-vsc.overlays.default 
-          inputs.nix-vscode-extensions.overlays.default
-            ];
+        ({pkgs, ...}: {
+          nixpkgs.overlays = [
+            inputs.catppuccin-vsc.overlays.default
+            inputs.nix-vscode-extensions.overlays.default
+          ];
 
           # Other Nix-Darwin configuration...
         })

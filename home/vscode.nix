@@ -1,5 +1,8 @@
-{inputs, pkgs, ...}: {
-
+{
+  inputs,
+  pkgs,
+  ...
+}: {
   nixpkgs.overlays = [
     inputs.catppuccin-vsc.overlays.default
     inputs.nix-vscode-extensions.overlays.default
@@ -24,7 +27,6 @@
       vscode-marketplace.catppuccin.catppuccin-vsc-icons
       vscode-marketplace.jeff-hykin.better-nix-syntax
       vscode-marketplace.jnoortheen.nix-ide
-
     ];
 
     userSettings = {
@@ -37,7 +39,7 @@
       "diffEditor.ignoreTrimWhitespace" = false;
 
       "editor.detectIndentation" = true;
-      "editor.fontFamily" = "Meslo LGS NF";
+      "editor.fontFamily" = "Hack Nerd Font Mono";
       "editor.fontLigatures" = true;
       "editor.fontSize" = 14;
       "editor.formatOnPaste" = false;
@@ -49,6 +51,7 @@
       "editor.snippetSuggestions" = "top";
       "editor.suggestSelection" = "first";
       "editor.tabSize" = 4;
+
       # we try to make semantic highlighting look good
       "editor.semanticHighlighting.enabled" = true;
       # prevent VSCode from modifying the terminal colors

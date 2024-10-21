@@ -23,8 +23,6 @@
 
     google-chrome
     raycast
-    alttab
-    hidden-bar
     stats
   ];
   environment.variables.EDITOR = "nvim";
@@ -69,6 +67,8 @@
       "firefox"
       "the-unarchiver"
       "visual-studio-code"
+      "alt-tab"
+      "hiddenbar"
 
       # messengers
       "viber"
