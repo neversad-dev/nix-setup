@@ -39,7 +39,7 @@
       "diffEditor.ignoreTrimWhitespace" = false;
 
       "editor.detectIndentation" = true;
-      "editor.fontFamily" = "Hack Nerd Font Mono";
+      "editor.fontFamily" = "FiraCode Nerd Font Mono";
       "editor.fontLigatures" = true;
       "editor.fontSize" = 14;
       "editor.formatOnPaste" = false;

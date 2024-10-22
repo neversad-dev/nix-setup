@@ -15,6 +15,8 @@
     kitty
     neovim
     git
+    fzf-git-sh
+    tlrc
     just # use Justfile to simplify nix-darwin's commands
 
     # messengers

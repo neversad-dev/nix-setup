@@ -42,6 +42,7 @@
       enable = true;
       options = {
         side-by-side = true;
+        navigate = true;
       };
     };
 
