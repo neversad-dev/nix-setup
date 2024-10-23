@@ -6,6 +6,7 @@
     ./git.nix
     ./kitty.nix
     ./starship.nix
+    ./tmux.nix
 
     ./catppuccin.nix
     ./vscode.nix

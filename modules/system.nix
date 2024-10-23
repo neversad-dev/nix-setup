@@ -176,41 +176,41 @@
             "124" = {enabled = true;}; # Control + 7
             "125" = {enabled = true;}; # Control + 8
             "126" = {enabled = true;}; # Control + 9
-            # Override Move Left a Space with Control + H
-            "79" = {
-              enabled = true; # Enable the new binding
-              value = {
-                parameters = [104 4 262144]; # Control + H key combination
-                type = "standard";
-              };
-            };
+            # # Override Move Left a Space with Control + H
+            # "79" = {
+            #   enabled = true; # Enable the new binding
+            #   value = {
+            #     parameters = [104 4 262144]; # Control + H key combination
+            #     type = "standard";
+            #   };
+            # };
+            
+            # # Override Move Left a Space with Control + L
+            # "81" = {
+            #   enabled = true; # Enable the new binding
+            #   value = {
+            #     parameters = [108 37 262144]; # Control + L key combination
+            #     type = "standard";
+            #   };
+            # };
 
-            # Override Move Left a Space with Control + L
-            "81" = {
-              enabled = true; # Enable the new binding
-              value = {
-                parameters = [108 37 262144]; # Control + L key combination
-                type = "standard";
-              };
-            };
+            # # Override Mission Controle with Control + K
+            # "32" = {
+            #   enabled = true; # Enable the new binding
+            #   value = {
+            #     parameters = [107 40 262144];
+            #     type = "standard";
+            #   };
+            # };
 
-            # Override Mission Controle with Control + K
-            "32" = {
-              enabled = true; # Enable the new binding
-              value = {
-                parameters = [107 40 262144];
-                type = "standard";
-              };
-            };
-
-            # Override Application windows with Control + J
-            "33" = {
-              enabled = true; # Enable the new binding
-              value = {
-                parameters = [106 38 262144];
-                type = "standard";
-              };
-            };
+            # # Override Application windows with Control + J
+            # "33" = {
+            #   enabled = true; # Enable the new binding
+            #   value = {
+            #     parameters = [106 38 262144];
+            #     type = "standard";
+            #   };
+            # };
           };
         };
       };

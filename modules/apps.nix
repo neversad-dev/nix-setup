@@ -26,6 +26,7 @@
     google-chrome
     raycast
     stats
+    monitorcontrol
   ];
   environment.variables.EDITOR = "nvim";
   environment.variables.VISUAL = "nvim";
