@@ -1,6 +1,5 @@
 {pkgs, ...}: {
   programs = {
-    
     zsh = {
       enable = true;
       autosuggestion.enable = true;
@@ -56,7 +55,7 @@
       enableZshIntegration = true;
       defaultCommand = "fd --hidden --strip-cwd-prefix --exclude .git";
       fileWidgetCommand = "fd --type=f --hidden --strip-cwd-prefix --exclude .git";
-      fileWidgetOptions = [ "--preview 'bat -n --color=always --line-range :500 {}'"];
+      fileWidgetOptions = ["--preview 'bat -n --color=always --line-range :500 {}'"];
       changeDirWidgetCommand = "fd --type=d --hidden --strip-cwd-prefix --exclude .git";
       changeDirWidgetOptions = ["--preview 'eza --tree --color=always {} | head -200'"];
       defaultOptions = [
@@ -73,16 +72,16 @@
     eza = {
       enable = true;
       git = true;
-      extraOptions = [ 
+      extraOptions = [
         "--icons=always"
         "--color=always"
-        "--long" 
+        "--long"
         "--no-filesize"
         "--no-time"
         "--no-user"
         "--no-permissions"
-        "--group-directories-first" 
-        "--header" 
+        "--group-directories-first"
+        "--header"
       ];
       enableZshIntegration = true;
     };

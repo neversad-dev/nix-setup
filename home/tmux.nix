@@ -1,8 +1,4 @@
-{
-pkgs, 
-  ...
-}: {
-
+{pkgs, ...}: {
   programs.tmux = {
     enable = true;
     aggressiveResize = true;
@@ -42,7 +38,7 @@ pkgs,
 
 
       # renumber all windows when any window is closed
-      set-option -g renumber-windows on 
+      set-option -g renumber-windows on
 
       # Status at the top
       set-option -g status on
@@ -63,7 +59,7 @@ pkgs,
     shortcut = "b"; # CTRL following by this key is used as the main shortcut.
     terminal = "tmux-256color";
     plugins = with pkgs; [
-      tmuxPlugins.vim-tmux-navigator  # TODO this overrides my system shortcuts. remove or replace them.
+      tmuxPlugins.vim-tmux-navigator # TODO this overrides my system shortcuts. remove or replace them.
       # tmuxPlugins.cpu
       # tmuxPlugins.battery
     ];

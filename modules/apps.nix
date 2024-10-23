@@ -20,7 +20,6 @@
     just # use Justfile to simplify nix-darwin's commands
 
     # messengers
-    telegram-desktop
     discord
 
     google-chrome
@@ -76,6 +75,7 @@
       # messengers
       "viber"
       "signal"
+      "telegram"
 
       "chatgpt"
       "itsycal" # TODO: seems like this is not installed automatically. Recheck

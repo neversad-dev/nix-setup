@@ -3,7 +3,6 @@
   ];
 
   programs = {
-
     # modern vim
     neovim = {
       enable = true;

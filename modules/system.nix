@@ -184,7 +184,7 @@
             #     type = "standard";
             #   };
             # };
-            
+
             # # Override Move Left a Space with Control + L
             # "81" = {
             #   enabled = true; # Enable the new binding
