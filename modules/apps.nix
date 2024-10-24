@@ -21,6 +21,7 @@
 
     # messengers
     discord
+    telegram-desktop
 
     google-chrome
     raycast
@@ -75,10 +76,9 @@
       # messengers
       "viber"
       "signal"
-      "telegram"
 
       "chatgpt"
-      "itsycal" # TODO: seems like this is not installed automatically. Recheck
+      "itsycal"
     ];
   };
 }

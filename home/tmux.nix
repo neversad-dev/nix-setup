@@ -7,35 +7,41 @@
     escapeTime = 0;
     historyLimit = 50000;
     extraConfig = ''
-        set -g @catppuccin_window_status_icon_enable "yes"
-        set -g @catppuccin_icon_window_last "󰖰"
-        set -g @catppuccin_icon_window_current "󰖯"
-        set -g @catppuccin_icon_window_zoom "󰁌"
-        set -g @catppuccin_icon_window_mark "󰃀"
-        set -g @catppuccin_icon_window_silent "󰂛"
-        set -g @catppuccin_icon_window_activity "󱅫"
-        set -g @catppuccin_icon_window_bell "󰂞"
-        set -g @catppuccin_status_background "theme"
 
-        set -g @catppuccin_window_left_separator ""
-        set -g @catppuccin_window_right_separator " "
-        set -g @catppuccin_window_middle_separator " █"
-        set -g @catppuccin_window_number_position "right"
+      # Setup Catppuccin
+      set -g @catppuccin_window_status_icon_enable "yes"
+      set -g @catppuccin_icon_window_last "󰖰"
+      set -g @catppuccin_icon_window_current "󰖯"
+      set -g @catppuccin_icon_window_zoom "󰁌"
+      set -g @catppuccin_icon_window_mark "󰃀"
+      set -g @catppuccin_icon_window_silent "󰂛"
+      set -g @catppuccin_icon_window_activity "󱅫"
+      set -g @catppuccin_icon_window_bell "󰂞"
+      set -g @catppuccin_status_background "theme"
 
-        set -g @catppuccin_window_default_fill "number"
-        set -g @catppuccin_window_default_text "#W"
+      set -g @catppuccin_window_left_separator ""
+      set -g @catppuccin_window_right_separator " "
+      set -g @catppuccin_window_middle_separator " █"
+      set -g @catppuccin_window_number_position "right"
 
-        set -g @catppuccin_window_current_fill "number"
-        set -g @catppuccin_window_current_text "#W"
+      set -g @catppuccin_window_default_fill "number"
+      set -g @catppuccin_window_default_text "#W"
 
-        set -g @catppuccin_status_modules_right "directory user host session"
-        set -g @catppuccin_status_left_separator  " "
-        set -g @catppuccin_status_right_separator ""
-        set -g @catppuccin_status_fill "icon"
-        set -g @catppuccin_status_connect_separator "no"
+      set -g @catppuccin_window_current_fill "number"
+      set -g @catppuccin_window_current_text "#W"
 
-        set -g @catppuccin_directory_text "#{pane_current_path}"
+      set -g @catppuccin_status_modules_right "directory user host session"
+      set -g @catppuccin_status_left_separator  " "
+      set -g @catppuccin_status_right_separator ""
+      set -g @catppuccin_status_fill "icon"
+      set -g @catppuccin_status_connect_separator "no"
 
+      set -g @catppuccin_directory_text "#{pane_current_path}"
+
+      # Increase tmux messages display duration from 750ms to 4s
+      set -g display-time 4000
+      # Refresh 'status-left' and 'status-right' more often, from every 15s to 5s
+      set -g status-interval 5
 
       # renumber all windows when any window is closed
       set-option -g renumber-windows on
@@ -56,12 +62,13 @@
     keyMode = "vi";
     mouse = true;
     newSession = false; # Automatically spawn a session if trying to attach and none are running.
-    shortcut = "b"; # CTRL following by this key is used as the main shortcut.
+    shortcut = "a"; # CTRL following by this key is used as the main shortcut.
     terminal = "tmux-256color";
     plugins = with pkgs; [
+      tmuxPlugins.sensible
       tmuxPlugins.vim-tmux-navigator # TODO this overrides my system shortcuts. remove or replace them.
-      # tmuxPlugins.cpu
-      # tmuxPlugins.battery
+      #tmuxPlugins.cpu
+      #tmuxPlugins.battery
     ];
   };
 }
