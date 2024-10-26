@@ -10,6 +10,7 @@
 
     ./catppuccin.nix
     ./vscode.nix
+    ./dust.nix
   ];
 
   # Home Manager needs a bit of information about you and the
