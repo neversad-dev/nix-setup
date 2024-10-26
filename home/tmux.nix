@@ -12,6 +12,18 @@ let
           sha256 = "sha256-bnlOAfdBv5Rg4z1hu1jtdx5oZ6kAZE40K4zqLxmyYQE=";
       };
   };
+  tmux-sessionx = pkgs.tmuxPlugins.mkTmuxPlugin
+  {
+      pluginName = "tmux-sessionx";
+      version = "main";
+      rtpFilePath = "sessionx.tmux";
+      src = pkgs.fetchFromGitHub {
+          owner = "omerxx";
+          repo = "tmux-sessionx";
+          rev = "0711d0374fe0ace8fd8774396469ab34c5fbf360";
+          sha256 = "sha256-9IhXoW9o/ftbhIree+I3vT6r3uNgkZ7cskSyedC3xG4=";
+      };
+  };
     
 in  {
   programs.tmux = {
@@ -86,6 +98,25 @@ in  {
       tmuxPlugins.vim-tmux-navigator # TODO this overrides my system shortcuts. remove or replace them.
       tmuxPlugins.cpu
       tmuxPlugins.battery
+      tmuxPlugins.better-mouse-mode
+      {
+        plugin = tmuxPlugins.tmux-fzf;
+        extraConfig = ''
+        
+        '';
+      }
+      {
+        plugin = tmux-sessionx;
+        extraConfig = ''
+          set -g @sessionx-bind "o"
+          set-environment -g TMUX_PLUGIN_MANAGER_PATH "${tmux-sessionx}/share/tmux-plugins"
+
+          set -g @sessionx-custom-paths '/Users/tinker/.setup'
+
+          set -g @sessionx-zoxide-mode "on"
+
+        '';
+      }
       {
         plugin = tmuxPlugins.resurrect;
         extraConfig = ''
