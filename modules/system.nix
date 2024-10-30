@@ -176,23 +176,23 @@
             "124" = {enabled = true;}; # Control + 7
             "125" = {enabled = true;}; # Control + 8
             "126" = {enabled = true;}; # Control + 9
-            # # Override Move Left a Space with Control + H
-            # "79" = {
-            #   enabled = true; # Enable the new binding
-            #   value = {
-            #     parameters = [104 4 262144]; # Control + H key combination
-            #     type = "standard";
-            #   };
-            # };
+            # Override Move Left a Space with Control + P
+            "79" = {
+              enabled = true; # Enable the new binding
+              value = {
+                parameters = [112 35 262144]; # Control + P key combination
+                type = "standard";
+              };
+            };
 
-            # # Override Move Left a Space with Control + L
-            # "81" = {
-            #   enabled = true; # Enable the new binding
-            #   value = {
-            #     parameters = [108 37 262144]; # Control + L key combination
-            #     type = "standard";
-            #   };
-            # };
+            # Override Move Right a Space with Control + N
+            "81" = {
+              enabled = true; # Enable the new binding
+              value = {
+                parameters = [110 45 262144]; # Control + N key combination
+                type = "standard";
+              };
+            };
 
             # # Override Mission Controle with Control + K
             # "32" = {
