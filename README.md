@@ -1,4 +1,4 @@
-### Nix darwin config
+# Nix darwin config
 
 
 ## Prerequisites
