@@ -26,7 +26,12 @@
    xcode-select --install
    ```
 
-7. Apply flake:
+6. Accept xcode license agreement:
+   ```
+   sudo xcodebuild -license accept
+   ```
+
+8. Apply flake:
   ```
   cd nix-setup
   nix  --extra-experimental-features "nix-command flakes" run nix-darwin -- switch --flake .
