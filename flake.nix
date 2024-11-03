@@ -1,15 +1,6 @@
 {
   description = "Nix for macOS configuration";
 
-  # the nixConfig here only affects the flake itself, not the system configuration!
-  nixConfig = {
-    substituters = [
-      # Query the mirror of USTC first, and then the official cache.
-      "https://mirrors.ustc.edu.cn/nix-channels/store"
-      "https://cache.nixos.org"
-    ];
-  };
-
   inputs = {
     # Official NixOS package source, using nixos-unstable branch here
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
@@ -51,8 +42,8 @@
     username = "tinker";
     useremail = "tinker@null.computer";
 
-    aarch64_darwin = "aarch64-darwin";
-    allSystems = [aarch64_darwin];
+    x64_darwin = "aarch64-darwin";
+    allSystems = [x64_darwin];
 
     specialArgs =
       inputs
@@ -62,13 +53,11 @@
   in {
     # nix-darwin with home-manager for macOS
     darwinConfigurations.mbp = darwin.lib.darwinSystem {
-      system = aarch64_darwin;
+      system = x64_darwin;
       inherit specialArgs;
 
       modules = [
         ./hosts/mbp
-
-        ./modules/darwin/users.nix
 
         ({pkgs, ...}: {
           nixpkgs.overlays = [
