@@ -3,7 +3,6 @@
   lib,
   ...
 }: {
-
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
@@ -22,5 +21,4 @@
     interval.Day = 7;
     options = lib.mkDefault "--delete-older-than 7d";
   };
-
 }

@@ -12,12 +12,6 @@
   #
   # Related Discussion: https://discourse.nixos.org/t/darwin-again/29331
   environment.systemPackages = with pkgs; [
-    kitty
-    neovim
-    git
-    fzf-git-sh
-    tlrc
-    just # use Justfile to simplify nix-darwin's commands
 
     # messengers
     discord
