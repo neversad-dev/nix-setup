@@ -60,11 +60,10 @@
     darwinConfigurations."${hostname}" = darwin.lib.darwinSystem {
       inherit system specialArgs;
       modules = [
-        ./modules/nix-core.nix
-        ./darwin
-        ./modules/system.nix
-        ./modules/apps.nix
-        ./modules/host-users.nix
+        ./modules/darwin/nix-core.nix
+        ./modules/darwin/system.nix
+        ./modules/darwin/apps.nix
+        ./modules/darwin/users.nix
 
         ({pkgs, ...}: {
           nixpkgs.overlays = [
@@ -84,7 +83,7 @@
           home-manager.extraSpecialArgs = specialArgs;
           home-manager.users.${username} = {...}:
             with inputs; {
-              imports = [ ./home ];
+              imports = [ ./home/darwin ];
             };
         }
 

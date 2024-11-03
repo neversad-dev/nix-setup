@@ -145,7 +145,7 @@
         SHOWFULLNAME = false; # show full name in login window
       };
 
-      universalaccess.reduceMotion = true;
+      # universalaccess.reduceMotion = true;  # TODO causes error
 
       # Customize settings that not supported by nix-darwin directly
       # see the source code of this project to get more undocumented options:
