@@ -11,18 +11,21 @@
   };
 
   inputs = {
+    # Official NixOS package source, using nixos-unstable branch here
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-24.05";
+
     # nixpkgs-darwin.url = "github:nixos/nixpkgs/nixpkgs-unstable";
     nixpkgs-darwin.url = "github:nixos/nixpkgs/nixpkgs-24.05-darwin";
+    darwin = {
+      url = "github:lnl7/nix-darwin";
+      inputs.nixpkgs.follows = "nixpkgs-darwin";
+    };
 
     home-manager = {
       # url = "github:nix-community/home-manager";
       url = "github:nix-community/home-manager/release-24.05";
-      inputs.nixpkgs.follows = "nixpkgs-darwin";
-    };
-
-    darwin = {
-      url = "github:lnl7/nix-darwin";
-      inputs.nixpkgs.follows = "nixpkgs-darwin";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
@@ -47,7 +50,6 @@
   }: let
     username = "tinker";
     useremail = "tinker@null.computer";
-    system = "aarch64-darwin"; # aarch64-darwin or x86_64-darwin
     hostname = "mbp";
 
     specialArgs =
@@ -58,8 +60,12 @@
   in {
     # nix-darwin with home-manager for macOS
     darwinConfigurations."${hostname}" = darwin.lib.darwinSystem {
-      inherit system specialArgs;
+      system = "aarch64-darwin"; 
+      inherit specialArgs;
+
       modules = [
+        ./hosts/mbp
+
         ./modules/darwin/nix-core.nix
         ./modules/darwin/system.nix
         ./modules/darwin/apps.nix
@@ -107,6 +113,6 @@
     };
 
     # nix code formatter
-    formatter.${system} = nixpkgs.legacyPackages.${system}.alejandra;
+    # formatter.${system} = nixpkgs.legacyPackages.${system}.alejandra;
   };
 }
