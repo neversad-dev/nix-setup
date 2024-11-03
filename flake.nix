@@ -54,25 +54,20 @@
     aarch64_darwin = "aarch64-darwin";
     allSystems = [aarch64_darwin];
 
-    hostname = "mbp";
-
     specialArgs =
       inputs
       // {
-        inherit username useremail hostname;
+        inherit username useremail;
       };
   in {
     # nix-darwin with home-manager for macOS
-    darwinConfigurations."${hostname}" = darwin.lib.darwinSystem {
-      system = "aarch64-darwin";
+    darwinConfigurations.mbp = darwin.lib.darwinSystem {
+      system = aarch64_darwin;
       inherit specialArgs;
 
       modules = [
         ./hosts/mbp
 
-        ./modules/darwin/nix-core.nix
-        ./modules/darwin/system.nix
-        ./modules/darwin/apps.nix
         ./modules/darwin/users.nix
 
         ({pkgs, ...}: {
@@ -91,10 +86,7 @@
           home-manager.useUserPackages = true;
           home-manager.backupFileExtension = "backup";
           home-manager.extraSpecialArgs = specialArgs;
-          home-manager.users.${username} = {...}:
-            with inputs; {
-              imports = [./home/darwin];
-            };
+          home-manager.users.${username} = import ./home/darwin;
         }
 
         nix-homebrew.darwinModules.nix-homebrew
