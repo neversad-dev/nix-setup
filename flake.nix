@@ -50,6 +50,10 @@
   }: let
     username = "tinker";
     useremail = "tinker@null.computer";
+
+    aarch64_darwin = "aarch64-darwin";
+    allSystems = [aarch64_darwin];
+
     hostname = "mbp";
 
     specialArgs =
@@ -60,7 +64,7 @@
   in {
     # nix-darwin with home-manager for macOS
     darwinConfigurations."${hostname}" = darwin.lib.darwinSystem {
-      system = "aarch64-darwin"; 
+      system = "aarch64-darwin";
       inherit specialArgs;
 
       modules = [
@@ -89,7 +93,7 @@
           home-manager.extraSpecialArgs = specialArgs;
           home-manager.users.${username} = {...}:
             with inputs; {
-              imports = [ ./home/darwin ];
+              imports = [./home/darwin];
             };
         }
 
@@ -113,6 +117,8 @@
     };
 
     # nix code formatter
-    # formatter.${system} = nixpkgs.legacyPackages.${system}.alejandra;
+    formatter = nixpkgs.lib.genAttrs allSystems (
+      system: nixpkgs.legacyPackages.${system}.alejandra
+    );
   };
 }

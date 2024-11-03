@@ -32,8 +32,7 @@
       # Config relating to git
       git = {
         # See https://github.com/jesseduffield/lazygit/blob/master/docs/Custom_Pagers.md
-        paging  = {
-
+        paging = {
           # e.g.
           # diff-so-fancy
           # delta --dark --paging=never

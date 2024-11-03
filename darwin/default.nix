@@ -4,5 +4,4 @@
     # ./yabai.nix
     # ./skhd.nix
   ];
-
 }
