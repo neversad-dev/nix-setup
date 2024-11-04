@@ -1,5 +1,5 @@
 {lib, ...}: {
-  programs.kitty = lib.mkForce {
+  programs.kitty = {
     enable = true;
 
     settings = {

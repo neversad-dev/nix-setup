@@ -8,7 +8,7 @@
 
     # nixpkgs-darwin.url = "github:nixos/nixpkgs/nixpkgs-unstable";
     nixpkgs-darwin.url = "github:nixos/nixpkgs/nixpkgs-24.05-darwin";
-    darwin = {
+    nix-darwin = {
       url = "github:lnl7/nix-darwin";
       inputs.nixpkgs.follows = "nixpkgs-darwin";
     };
@@ -34,16 +34,18 @@
   outputs = inputs @ {
     self,
     nixpkgs,
-    darwin,
+    nixpkgs-stable,
+    nixpkgs-darwin,
+    nix-darwin,
     home-manager,
     nix-homebrew,
     ...
   }: let
-    username = "tinker";
-    useremail = "tinker@null.computer";
-
     x64_darwin = "aarch64-darwin";
     allSystems = [x64_darwin];
+
+    username = "tinker";
+    useremail = "tinker@null.computer";
 
     specialArgs =
       inputs
@@ -52,8 +54,9 @@
       };
   in {
     # nix-darwin with home-manager for macOS
-    darwinConfigurations.mbp = darwin.lib.darwinSystem {
+    darwinConfigurations.mbp = nix-darwin.lib.darwinSystem {
       system = x64_darwin;
+      inputs = {inherit nix-darwin home-manager nixpkgs nixpkgs-darwin;};
       inherit specialArgs;
 
       modules = [
@@ -74,6 +77,7 @@
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
           home-manager.backupFileExtension = "backup";
+
           home-manager.extraSpecialArgs = specialArgs;
           home-manager.users.${username} = import ./home/darwin;
         }

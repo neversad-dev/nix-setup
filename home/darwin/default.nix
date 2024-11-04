@@ -6,6 +6,5 @@
     ../base/gui
     ../base/tui
     ../base/home.nix
-
   ];
 }
