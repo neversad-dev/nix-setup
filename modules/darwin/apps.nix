@@ -12,17 +12,18 @@
   #
   # Related Discussion: https://discourse.nixos.org/t/darwin-again/29331
   environment.systemPackages = with pkgs; [
-    # messengers
-    discord
-    telegram-desktop
-
-    google-chrome
-    raycast
-    stats
-    monitorcontrol
+    neovim
+    git
   ];
   environment.variables.EDITOR = "nvim";
   environment.variables.VISUAL = "nvim";
+
+  # Create /etc/zshrc that loads the nix-darwin environment.
+  # this is required if you want to use darwin's default shell - zsh
+  programs.zsh.enable = true;
+  environment.shells = [
+    pkgs.zsh
+  ];
 
   # TODO To make this work, homebrew need to be installed manually, see https://brew.sh
   #
@@ -61,17 +62,24 @@
     # `brew install --cask`
     casks = [
       "firefox"
+      "google-chrome"
       "the-unarchiver"
       "visual-studio-code"
+      "zed"
       "alt-tab"
       "hiddenbar"
 
       # messengers
+      "telegram"
       "viber"
       "signal"
 
       "chatgpt"
       "itsycal"
+      "iina"
+      "raycast" # (HotKey: alt/option + space)search, calculate and run scripts(with many plugins)
+      "stats" # beautiful system status monitor in menu bar
+      "monitorcontrol"
     ];
   };
 }

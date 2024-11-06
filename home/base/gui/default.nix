@@ -1,6 +1,3 @@
-_: {
-  imports = [
-    ./kitty.nix
-    ./vscode.nix
-  ];
+{mylib, ...}: {
+  imports = mylib.scanPaths ./.;
 }

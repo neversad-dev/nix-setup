@@ -3,30 +3,30 @@
   pkgs,
   ...
 }: {
-  nixpkgs.overlays = [
-    inputs.catppuccin-vsc.overlays.default
-    inputs.nix-vscode-extensions.overlays.default
-  ];
+  # nixpkgs.overlays = [
+  #   inputs.catppuccin-vsc.overlays.default
+  #   inputs.nix-vscode-extensions.overlays.default
+  # ];
 
   programs.vscode = {
     enable = true;
 
     extensions = with pkgs; [
       # all the theme options will be available as overrides, these are defaults:
-      (catppuccin-vsc.override {
-        accent = "mauve";
-        boldKeywords = true;
-        italicComments = true;
-        italicKeywords = true;
-        extraBordersEnabled = false;
-        workbenchMode = "default";
-        bracketMode = "rainbow";
-        colorOverrides = {};
-        customUIColors = {};
-      })
-      vscode-marketplace.catppuccin.catppuccin-vsc-icons
-      vscode-marketplace.jeff-hykin.better-nix-syntax
-      vscode-marketplace.jnoortheen.nix-ide
+      # (catppuccin-vsc.override {
+      #   accent = "mauve";
+      #   boldKeywords = true;
+      #   italicComments = true;
+      #   italicKeywords = true;
+      #   extraBordersEnabled = false;
+      #   workbenchMode = "default";
+      #   bracketMode = "rainbow";
+      #   colorOverrides = {};
+      #   customUIColors = {};
+      # })
+      # vscode-marketplace.catppuccin.catppuccin-vsc-icons
+      # vscode-marketplace.jeff-hykin.better-nix-syntax
+      # vscode-marketplace.jnoortheen.nix-ide
     ];
 
     userSettings = {
