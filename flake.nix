@@ -44,13 +44,13 @@
     x64_darwin = "aarch64-darwin";
     allSystems = [x64_darwin];
 
-    username = "tinker";
-    useremail = "tinker@null.computer";
+    inherit (inputs.nixpkgs) lib;
+    myvars = import ./vars;
 
     specialArgs =
       inputs
       // {
-        inherit username useremail;
+        inherit myvars;
       };
   in {
     # nix-darwin with home-manager for macOS
@@ -79,7 +79,7 @@
           home-manager.backupFileExtension = "backup";
 
           home-manager.extraSpecialArgs = specialArgs;
-          home-manager.users.${username} = import ./home/darwin;
+          home-manager.users.${myvars.username} = import ./home/darwin;
         }
 
         nix-homebrew.darwinModules.nix-homebrew
@@ -87,7 +87,7 @@
           nix-homebrew = {
             # Install Homebrew under the default prefix
             enable = true;
-            user = "${username}";
+            user = "${myvars.username}";
 
             # Automatically migrate existing Homebrew installations
             autoMigrate = true;
