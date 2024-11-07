@@ -41,11 +41,15 @@
 
     # theme
     catppuccin.url = "github:catppuccin/nix";
-
-    catppuccin-vsc.url = "https://flakehub.com/f/catppuccin/vscode/*.tar.gz";
-    catppuccin-vsc.inputs.nixpkgs.follows = "nixpkgs";
-
-    nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
-    nix-vscode-extensions.inputs.nixpkgs.follows = "nixpkgs";
+    catppuccin-vsc = {
+      url = "https://flakehub.com/f/catppuccin/vscode/*.tar.gz";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    
+    # misc
+    nix-vscode-extensions = {
+      url = "github:nix-community/nix-vscode-extensions";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 }

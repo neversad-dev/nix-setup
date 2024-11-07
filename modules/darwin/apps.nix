@@ -64,7 +64,6 @@
       "firefox"
       "google-chrome"
       "the-unarchiver"
-      "visual-studio-code"
       "zed"
       "alt-tab"
       "hiddenbar"
