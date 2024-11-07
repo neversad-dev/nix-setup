@@ -9,7 +9,7 @@
   specialArgs ? (genSpecialArgs system),
   ...
 }: let
-  inherit (inputs) nixpkgs-darwin home-manager nix-darwin;
+  inherit (inputs) nixpkgs-darwin home-manager nix-darwin nix-homebrew homebrew-core homebrew-cask;
 in
   nix-darwin.lib.darwinSystem {
     inherit system specialArgs;
@@ -17,8 +17,10 @@ in
       darwin-modules
       ++ [
         ({lib, ...}: {
-          nixpkgs.pkgs = import nixpkgs-darwin {inherit system;
-          config.allowUnfree = true;};
+          nixpkgs.pkgs = import nixpkgs-darwin {
+            inherit system;
+            config.allowUnfree = true;
+          };
         })
       ]
       ++ (
@@ -34,5 +36,21 @@ in
             home-manager.users."${myvars.username}".imports = home-modules;
           }
         ]
-      );
+      )
+      ++ [
+        (nix-homebrew.darwinModules.nix-homebrew {
+          lib = lib;
+          nix-homebrew = {
+            enable = true;
+            enableRosetta = true;
+            user = myvars.username;
+            taps = {
+              "homebrew/homebrew-core" = homebrew-core;
+              "homebrew/homebrew-cask" = homebrew-cask;
+            };
+            mutableTaps = false;
+            autoMigrate = true;
+          };
+        })
+      ];
   }

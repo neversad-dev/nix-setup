@@ -145,6 +145,38 @@
         "type": "github"
       }
     },
+    "homebrew-cask": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1730965427,
+        "narHash": "sha256-pt2vU3xzij8IBmectvTCJwxAYSSyIe6htz8apM22CjI=",
+        "owner": "homebrew",
+        "repo": "homebrew-cask",
+        "rev": "167142e526a3e6ef0c90e54209bb7fe427d664f1",
+        "type": "github"
+      },
+      "original": {
+        "owner": "homebrew",
+        "repo": "homebrew-cask",
+        "type": "github"
+      }
+    },
+    "homebrew-core": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1730966365,
+        "narHash": "sha256-OTOD1lG1eFSjAF4R6T2aXZqBcr/tF3/DH63k7fxlwoA=",
+        "owner": "homebrew",
+        "repo": "homebrew-core",
+        "rev": "2f8d54e51707d09dba23773a4641b075ee72b4a4",
+        "type": "github"
+      },
+      "original": {
+        "owner": "homebrew",
+        "repo": "homebrew-core",
+        "type": "github"
+      }
+    },
     "nix-darwin": {
       "inputs": {
         "nixpkgs": [
@@ -342,6 +374,8 @@
         "catppuccin-vsc": "catppuccin-vsc",
         "haumea": "haumea",
         "home-manager": "home-manager",
+        "homebrew-cask": "homebrew-cask",
+        "homebrew-core": "homebrew-core",
         "nix-darwin": "nix-darwin",
         "nix-homebrew": "nix-homebrew",
         "nix-vscode-extensions": "nix-vscode-extensions",
