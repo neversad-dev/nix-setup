@@ -61,6 +61,7 @@
 
     # `brew install --cask`
     casks = [
+      "kitty"
       "firefox"
       "google-chrome"
       "the-unarchiver"
