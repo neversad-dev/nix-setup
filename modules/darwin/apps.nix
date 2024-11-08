@@ -51,6 +51,7 @@
 
     taps = [
       "homebrew/services"
+      "nikitabobko/tap"
     ];
 
     # `brew install`
@@ -68,6 +69,7 @@
       "zed"
       "alt-tab"
       "hiddenbar"
+      "aerospace"
 
       # messengers
       "telegram"

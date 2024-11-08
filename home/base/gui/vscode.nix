@@ -4,7 +4,6 @@
   nixpkgs,
   ...
 }: {
-
   programs.vscode = {
     enable = true;
 

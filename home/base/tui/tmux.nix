@@ -1,4 +1,8 @@
-{pkgs, pkgs-stable, ...}: let
+{
+  pkgs,
+  pkgs-stable,
+  ...
+}: let
   tmux-nerd-font-window-name =
     pkgs.tmuxPlugins.mkTmuxPlugin
     {
@@ -27,7 +31,7 @@
     };
 in {
   programs.tmux = {
-    package = pkgs-stable.tmux;   # use stable branch because of 3.5 version issue: https://github.com/nix-community/home-manager/issues/5952
+    package = pkgs-stable.tmux; # use stable branch because of 3.5 version issue: https://github.com/nix-community/home-manager/issues/5952
     enable = true;
     catppuccin.enable = false; # load plugin separately for latest version
     aggressiveResize = true;
