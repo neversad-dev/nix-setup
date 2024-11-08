@@ -106,6 +106,7 @@
         NSNavPanelExpandedStateForSaveMode2 = true;
         NSScrollAnimationEnabled = true;
         NSTableViewDefaultSizeMode = 2; # Sets the size of the finder sidebar icons: 1 (small), 2 (medium) or 3 (large). The default is 3.
+        NSWindowShouldDragOnGesture = true;
 
         _HIHideMenuBar = false;
         "com.apple.mouse.tapBehavior" = 1; # Configures the trackpad tap behavior. Mode 1 enables tap to click.

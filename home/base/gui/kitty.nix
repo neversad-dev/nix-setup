@@ -10,6 +10,7 @@
 
       font_size = "14.0";
 
+      hide_window_decorations = "yes";
       confirm_os_window_close = 0;
       dynamic_background_opacity = true;
       enable_audio_bell = false;
