@@ -7,9 +7,9 @@
   programs.vscode = {
     enable = true;
 
-    extensions = with pkgs; [
+    extensions = with pkgs; with vscode-marketplace; [
       # all the theme options will be available as overrides, these are defaults:
-      (pkgs.catppuccin-vsc.override {
+      (catppuccin-vsc.override {
         accent = "mauve";
         boldKeywords = true;
         italicComments = true;
@@ -20,9 +20,13 @@
         colorOverrides = {};
         customUIColors = {};
       })
-      vscode-marketplace.catppuccin.catppuccin-vsc-icons
-      vscode-marketplace.jeff-hykin.better-nix-syntax
-      vscode-marketplace.jnoortheen.nix-ide
+      catppuccin.catppuccin-vsc-icons
+      jeff-hykin.better-nix-syntax
+      jnoortheen.nix-ide
+      redhat.vscode-commons
+      redhat.vscode-xml
+      redhat.vscode-yaml
+      tamasfe.even-better-toml
     ];
 
     userSettings = {
@@ -31,6 +35,7 @@
       #  - crash: Sends OS level crash reports.
       #  - off: Disables all product telemetry.
       "telemetry.telemetryLevel" = "off";
+      "redhat.telemetry.enabled" = false;
 
       "diffEditor.ignoreTrimWhitespace" = false;
 
