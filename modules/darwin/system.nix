@@ -108,7 +108,7 @@
         NSTableViewDefaultSizeMode = 2; # Sets the size of the finder sidebar icons: 1 (small), 2 (medium) or 3 (large). The default is 3.
         NSWindowShouldDragOnGesture = true;
 
-        _HIHideMenuBar = false;
+        _HIHideMenuBar = true;
         "com.apple.mouse.tapBehavior" = 1; # Configures the trackpad tap behavior. Mode 1 enables tap to click.
         "com.apple.sound.beep.feedback" = 0; # disable beep sound when pressing volume up/down key
         "com.apple.swipescrolldirection" = true; # enable natural scrolling(default to true)
@@ -145,7 +145,7 @@
       };
 
       # true for Aerospace: https://nikitabobko.github.io/AeroSpace/guide#a-note-on-displays-have-separate-spaces
-      spaces.spans-displays = true; # false = each physical display has a separate space (Mac default) true = one space spans across all physical displays
+      spaces.spans-displays = false; # false = each physical display has a separate space (Mac default) true = one space spans across all physical displays
 
       loginwindow = {
         GuestEnabled = false; # disable guest user
