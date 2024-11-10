@@ -60,12 +60,12 @@ preset = 'qwerty'
 #                 Monitor pattern is the same as for 'workspace-to-monitor-force-assignment'.
 #                 See: https://nikitabobko.github.io/AeroSpace/guide#assign-workspaces-to-monitors
 [gaps]
-inner.horizontal = 10
-inner.vertical =   10
-outer.left =       10
-outer.bottom =     10
-outer.top =        10
-outer.right =      10
+inner.horizontal = 6
+inner.vertical =   6
+outer.left =       6
+outer.bottom =     6
+outer.top =        6
+outer.right =      6
 
 [exec]
 inherit-env-vars = true
@@ -219,10 +219,26 @@ if.app-id = 'net.kovidgoyal.kitty'
 run = 'move-node-to-workspace T' # mnemonics T - Terminal
 
 [[on-window-detected]]
+if.app-id = 'com.apple.Terminal'
+run = 'move-node-to-workspace T' # mnemonics T - Terminal
+
+[[on-window-detected]]
 if.app-id = 'com.google.Chrome'
-run = 'move-node-to-workspace W' # mnemonics W - Web browser
+run = 'move-node-to-workspace B' # mnemonics B - Browser
 
 [[on-window-detected]]
 if.app-id = 'org.mozilla.firefox'
-run = 'move-node-to-workspace W' # mnemonics W - Web browser
+run = 'move-node-to-workspace B' # mnemonics B - Browser
+
+[[on-window-detected]]
+if.app-id = 'com.apple.Safari'
+run = 'move-node-to-workspace B' # mnemonics B - Browser
+
+[[on-window-detected]]
+if.app-id = 'com.viber.osx'
+run = 'move-node-to-workspace M' # mnemonics M - Messengers
+
+[[on-window-detected]]
+if.app-id = 'org.whispersystems.signal-desktop'
+run = 'move-node-to-workspace M' # mnemonics M - Messengers
 
