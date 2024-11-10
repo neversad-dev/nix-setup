@@ -58,6 +58,7 @@
     brews = [
       "wget" # download tool
       "curl" # no not install curl via nixpkgs, it's not working well on macOS!
+
     ];
 
     # `brew install --cask`
@@ -82,6 +83,9 @@
       "raycast" # (HotKey: alt/option + space)search, calculate and run scripts(with many plugins)
       "stats" # beautiful system status monitor in menu bar
       "monitorcontrol"
+
+      "font-sf-pro"
+      "sf-symbols"
     ];
   };
 }

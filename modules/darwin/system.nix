@@ -1,4 +1,4 @@
-{pkgs, ...}:
+{pkgs, pkgs-unstable, ...}:
 ###################################################################################
 #
 #  macOS's System configuration
@@ -254,6 +254,7 @@
       # icon fonts
       material-design-icons
       font-awesome
+      pkgs-unstable.sketchybar-app-font
 
       # nerdfonts
       # https://github.com/NixOS/nixpkgs/blob/nixos-24.05/pkgs/data/fonts/nerdfonts/shas.nix
