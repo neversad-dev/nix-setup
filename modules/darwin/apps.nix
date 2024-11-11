@@ -59,6 +59,7 @@
       "wget" # download tool
       "curl" # no not install curl via nixpkgs, it's not working well on macOS!
 
+      "switchaudio-osx"
     ];
 
     # `brew install --cask`
