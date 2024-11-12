@@ -1,0 +1,19 @@
+#!/bin/sh
+
+INPUT_SOURCE=(
+    update_freq=1
+    width=16
+    icon.font="$FONT:Regular:20.0"
+    icon.padding_left=0
+    icon.padding_right=2
+    label.drawing=off
+    background.padding_right=0
+    background.padding_left=0
+    script="$PLUGIN_DIR/get_input_source.sh"
+)
+
+sketchybar --add item input_source right
+sketchybar --set input_source "${INPUT_SOURCE[@]}"
+    
+
+
