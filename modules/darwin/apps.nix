@@ -14,6 +14,8 @@
   environment.systemPackages = with pkgs; [
     neovim
     git
+
+    telegram-desktop
   ];
   environment.variables.EDITOR = "nvim";
   environment.variables.VISUAL = "nvim";
@@ -81,7 +83,6 @@
       "aerospace"
 
       # messengers
-      "telegram"
       "viber"
       "signal"
 
