@@ -99,19 +99,21 @@ PATH = '/opt/homebrew/bin:/opt/homebrew/sbin:$${PATH}'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#exec-and-forget
 # You can uncomment the following lines to open up terminal with alt + enter shortcut (like in i3)
-alt-enter = '''exec-and-forget osascript -e '
-tell application "kitty"
-    do script
-    activate
-end tell'
-'''
+alt-enter = 'exec-and-forget open -a kitty'
 
-alt-b = '''exec-and-forget osascript -e '
-tell application "Safari"
-    make new document at end of documents
-    activate
-end tell'
-'''
+alt-w = 'exec-and-forget open -a firefox'
+
+alt-b = 'exec-and-forget open -a finder'
+
+alt-t = 'exec-and-forget open -a telegram'
+alt-s = 'exec-and-forget open -a signal'
+alt-v = 'exec-and-forget open -a viber'
+
+alt-c = '''exec-and-forget open -a "Visual Studio Code"'''
+
+alt-o = 'exec-and-forget open -a OrcaSlicer'
+
+alt-z = 'exec-and-forget open -a zed'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#layout
 alt-slash = 'layout tiles horizontal vertical'
@@ -207,6 +209,10 @@ alt-shift-l = ['join-with right', 'mode main']
 ## Notes
 
 [[on-window-detected]]
+if.app-id = 'dev.zed.Zed'
+run = 'move-node-to-workspace 1' 
+
+[[on-window-detected]]
 if.app-id = 'md.obsidian'
 run = 'move-node-to-workspace 1' 
 
@@ -224,7 +230,7 @@ run = 'move-node-to-workspace 2'
 
 [[on-window-detected]]
 if.app-id = 'com.softfever3d.orca-slicer'
-run = 'move-node-to-workspace 2' 
+run = 'move-node-to-workspace 5' 
 
 ## Browsers
 
