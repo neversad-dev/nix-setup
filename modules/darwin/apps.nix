@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{pkgs, lib, ...}: {
   ##########################################################################
   #
   #  Install all apps and packages here.
@@ -17,6 +17,11 @@
   ];
   environment.variables.EDITOR = "nvim";
   environment.variables.VISUAL = "nvim";
+  environment.systemPath = lib.mkBefore [
+      "/usr/local/bin"      # intel mac
+      "/opt/homebrew/bin"   # m1 mac
+      "/opt/homebrew/sbin"
+    ];
 
   # Create /etc/zshrc that loads the nix-darwin environment.
   # this is required if you want to use darwin's default shell - zsh
