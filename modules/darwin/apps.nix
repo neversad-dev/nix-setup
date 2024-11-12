@@ -52,6 +52,7 @@
     taps = [
       "homebrew/services"
       "nikitabobko/tap"
+      "FelixKratz/formulae"
     ];
 
     # `brew install`
@@ -60,6 +61,7 @@
       "curl" # no not install curl via nixpkgs, it's not working well on macOS!
 
       "switchaudio-osx"
+      "borders"
     ];
 
     # `brew install --cask`
