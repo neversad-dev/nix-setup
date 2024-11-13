@@ -82,6 +82,11 @@
 - move icons (ctrl + drag&drop)
 
 
+## Apps that I use but not installed with nix:
+
+- Orca Slicer: https://github.com/SoftFever/OrcaSlicer/releases
+
+
 ## Update
 ```
 just darwin
