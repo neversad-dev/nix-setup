@@ -102,6 +102,7 @@
       "localsend"
       "orangedrangon-android-messages"
       "camo-studio"
+      "obs"
     ];
   };
 }
