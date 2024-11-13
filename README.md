@@ -85,6 +85,7 @@
 ## Apps that I use but not installed with nix:
 
 - Orca Slicer: https://github.com/SoftFever/OrcaSlicer/releases
+- KDE Connect: https://kdeconnect.kde.org
 
 
 ## Update
