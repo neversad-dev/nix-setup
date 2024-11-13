@@ -1,7 +1,6 @@
 {
   inputs,
   pkgs,
-  nixpkgs,
   ...
 }: {
   programs.vscode = {
@@ -21,9 +20,13 @@
         customUIColors = {};
       })
       catppuccin.catppuccin-vsc-icons
+
+      christian-kohler.path-intellisense
+
       jeff-hykin.better-nix-syntax
       jnoortheen.nix-ide
-      redhat.vscode-commons
+
+      redhat.java
       redhat.vscode-xml
       redhat.vscode-yaml
       tamasfe.even-better-toml
@@ -76,6 +79,8 @@
       "workbench.statusBar.visible" = false;
 
       "[nix]"."editor.tabSize" = 2;
+      "nix.enableLanguageServer" = true; # Enable LSP.
+      "nix.serverPath" = "nil"; # The path to the LSP server executable.
     };
   };
 }
