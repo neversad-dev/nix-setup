@@ -292,6 +292,10 @@ run = 'move-node-to-workspace 10'
 if.app-id = 'com.tinyspeck.slackmacgap'
 run = 'move-node-to-workspace 10' 
 
+[[on-window-detected]]
+if.app-id = 'pw.kmr.amd'
+run = 'move-node-to-workspace 10' 
+
 
 # Force float
 

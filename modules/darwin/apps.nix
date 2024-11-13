@@ -69,6 +69,7 @@
 
       "switchaudio-osx"
       "borders"
+      "scrcpy"
     ];
 
     # `brew install --cask`
@@ -95,6 +96,12 @@
 
       "font-sf-pro"
       "sf-symbols"
+
+      "android-platform-tools"
+      "android-file-transfer"
+      "localsend"
+      "orangedrangon-android-messages"
+      "camo-studio"
     ];
   };
 }
