@@ -1,4 +1,4 @@
-{lib, ...}: {
+{...}: {
   programs.kitty = {
     enable = true;
 
@@ -23,7 +23,6 @@
       tab_bar_style = "powerline"; # fade, slant, separator, powerline, custom, hidden
       tab_powerline_style = "round"; # angled, slanted, round
       tab_activity_symbol = " ";
-      line_height = "1.2";
     };
   };
 }
