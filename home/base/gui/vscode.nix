@@ -26,7 +26,15 @@
       ms-azuretools.vscode-docker
       editorconfig.editorconfig
 
-      bierner.github-markdown-preview # TODO: check if works
+      bierner.github-markdown-preview
+      bierner.markdown-preview-github-styles
+      bierner.markdown-emoji
+      bierner.markdown-checkbox
+      bierner.markdown-yaml-preamble
+      bierner.markdown-footnotes
+      bierner.markdown-mermaid
+      bierner.markdown-image-size
+      bierner.emojisense
       davidanson.vscode-markdownlint
 
       jeff-hykin.better-nix-syntax
