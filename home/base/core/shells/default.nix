@@ -39,6 +39,10 @@
 
         # Source the fzf-git-sh script
         source ${pkgs.fzf-git-sh}/share/fzf-git-sh/fzf-git.sh
+
+        if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
+          tmux attach || tmux new-session -s
+        fi
       '';
     };
   };
