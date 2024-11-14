@@ -40,7 +40,6 @@
       jeff-hykin.better-nix-syntax
       jnoortheen.nix-ide
       kamadorueda.alejandra
-      # nixpkgs-fmt
 
       redhat.java
       mathiasfrohlich.kotlin
