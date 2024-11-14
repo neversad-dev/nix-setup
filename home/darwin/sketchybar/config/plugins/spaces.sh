@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
-
 AEROSPACE_FOCUSED_MONITOR=$(/opt/homebrew/bin/aerospace list-monitors --focused | awk '{print $1}')
 AEROSAPCE_WORKSPACE_FOCUSED_MONITOR=$(/opt/homebrew/bin/aerospace list-workspaces --monitor focused --empty no)
 AEROSPACE_EMPTY_WORKESPACE=$(/opt/homebrew/bin/aerospace list-workspaces --monitor focused --empty)
@@ -11,10 +10,9 @@ reload_workspace_icon() {
 
   icon_strip=""
   if [ "${apps}" != "" ]; then
-    while read -r app
-    do
+    while read -r app; do
       icon_strip+="$($CONFIG_DIR/plugins/icon_map_fn.sh "$app")"
-    done <<< "${apps}"
+    done <<<"${apps}"
   else
     icon_strip="—"
   fi
@@ -28,16 +26,16 @@ if [ "$SENDER" = "aerospace_workspace_change" ]; then
   reload_workspace_icon "$AEROSPACE_FOCUSED_WORKSPACE"
 
   # current workspace space border color
-  sketchybar --set space.$AEROSPACE_FOCUSED_WORKSPACE     \
-                    icon.highlight=on                     \
-                    label.highlight=on                    \
-                    background.border_width=1
+  sketchybar --set space.$AEROSPACE_FOCUSED_WORKSPACE \
+    icon.highlight=on \
+    label.highlight=on \
+    background.border_width=1
 
   # prev workspace space border color
-  sketchybar --set space.$AEROSPACE_PREV_WORKSPACE        \
-                    icon.highlight=off                    \
-                    label.highlight=off                   \
-                    background.border_width=0
+  sketchybar --set space.$AEROSPACE_PREV_WORKSPACE \
+    icon.highlight=off \
+    label.highlight=off \
+    background.border_width=0
 
   for i in $AEROSAPCE_WORKSPACE_FOCUSED_MONITOR; do
     sketchybar --set space.$i display=$AEROSPACE_FOCUSED_MONITOR

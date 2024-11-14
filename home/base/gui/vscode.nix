@@ -24,6 +24,7 @@
       oderwat.indent-rainbow
       wmaurer.change-case
       ms-azuretools.vscode-docker
+      editorconfig.editorconfig
 
       bierner.github-markdown-preview # TODO: check if works
       davidanson.vscode-markdownlint
@@ -36,9 +37,11 @@
       redhat.java
       mathiasfrohlich.kotlin
 
-      nefrob.vscode-just-syntax # TODO: check if works
+      nefrob.vscode-just-syntax
 
       mads-hartmann.bash-ide-vscode
+      timonwong.shellcheck
+      mkhl.shfmt
 
       redhat.vscode-xml
       redhat.vscode-yaml
@@ -122,6 +125,10 @@
         "editor.defaultFormatter" = "kamadorueda.alejandra";
       };
       "alejandra.program" = "alejandra";
+
+      "[shellscript]" = {
+        "editor.defaultFormatter" = "mkhl.shfmt";
+      };
     };
   };
 }

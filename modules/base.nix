@@ -49,6 +49,7 @@
     gnutar
     rsync
     alejandra # The Uncompromising Nix Code Formatter
+    shfmt # A shell parser and formatter
   ];
 
   users.users.${myvars.username} = {

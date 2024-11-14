@@ -3,17 +3,17 @@
 WIDTH=100
 
 detail_on() {
-  sketchybar  --animate tanh 30 --set volume_slider slider.width=$WIDTH     \
-              --animate tanh 30 --set volume_slider padding_right=8
+  sketchybar --animate tanh 30 --set volume_slider slider.width=$WIDTH \
+    --animate tanh 30 --set volume_slider padding_right=8
 
   sleep 8
-  sketchybar  --animate tanh 30 --set volume_slider slider.width=0          \
-              --animate tanh 30 --set volume_slider padding_right=0
+  sketchybar --animate tanh 30 --set volume_slider slider.width=0 \
+    --animate tanh 30 --set volume_slider padding_right=0
 }
 
 detail_off() {
-  sketchybar  --animate tanh 30 --set volume_slider slider.width=0          \
-              --animate tanh 30 --set volume_slider padding_right=0
+  sketchybar --animate tanh 30 --set volume_slider slider.width=0 \
+    --animate tanh 30 --set volume_slider padding_right=0
 }
 
 toggle_detail() {

@@ -11,26 +11,26 @@ if [ $PERCENTAGE = "" ]; then
 fi
 
 case ${PERCENTAGE} in
-  9[0-9]|100) 
-    ICON="$BATTERY_100_ICON" 
-    ICON_COLOR=$BATTERY_1
-    ;;
-  [6-8][0-9]) 
-    ICON="$BATTERY_75_ICON" 
-    ICON_COLOR=$BATTERY_2
-    ;;
-  [3-5][0-9]) 
-    ICON="$BATTERY_50_ICON" 
-    ICON_COLOR=$BATTERY_3
-    ;;
-  [1-2][0-9]) 
-    ICON="$BATTERY_25_ICON" 
-    ICON_COLOR=$BATTERY_4
-    ;;
-  [0-9])
-    ICON="$BATTERY_0_ICON"
-    ICON_COLOR=$BATTERY_5
-    ;;
+9[0-9] | 100)
+  ICON="$BATTERY_100_ICON"
+  ICON_COLOR=$BATTERY_1
+  ;;
+[6-8][0-9])
+  ICON="$BATTERY_75_ICON"
+  ICON_COLOR=$BATTERY_2
+  ;;
+[3-5][0-9])
+  ICON="$BATTERY_50_ICON"
+  ICON_COLOR=$BATTERY_3
+  ;;
+[1-2][0-9])
+  ICON="$BATTERY_25_ICON"
+  ICON_COLOR=$BATTERY_4
+  ;;
+[0-9])
+  ICON="$BATTERY_0_ICON"
+  ICON_COLOR=$BATTERY_5
+  ;;
 esac
 
 if [[ $CHARGING != "" ]]; then
