@@ -99,23 +99,23 @@ PATH = '/opt/homebrew/bin:/opt/homebrew/sbin:$${PATH}'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#exec-and-forget
 # You can uncomment the following lines to open up terminal with alt + enter shortcut (like in i3)
-alt-enter = 'exec-and-forget open -a kitty'
+alt-enter = 'exec-and-forget /usr/bin/open -a kitty'
 
-alt-w = 'exec-and-forget open -a firefox'
+alt-w = 'exec-and-forget /usr/bin/open -a firefox'
 
-alt-b = 'exec-and-forget open -a finder'
+alt-b = 'exec-and-forget /usr/bin/open -a finder'
 
-alt-t = 'exec-and-forget open -a telegram'
-alt-s = 'exec-and-forget open -a signal'
-alt-v = 'exec-and-forget open -a viber'
+alt-t = 'exec-and-forget /usr/bin/open -a telegram'
+alt-s = 'exec-and-forget /usr/bin/open -a signal'
+alt-v = 'exec-and-forget /usr/bin/open -a viber'
 
-alt-c = '''exec-and-forget open -a "Visual Studio Code"'''
+alt-c = '''exec-and-forget /usr/bin/open -a "Visual Studio Code"'''
 
-alt-o = 'exec-and-forget open -a OrcaSlicer'
+alt-o = 'exec-and-forget /usr/bin/open -a OrcaSlicer'
 
-alt-z = 'exec-and-forget open -a zed'
+alt-z = 'exec-and-forget /usr/bin/open -a zed'
 
-alt-p = 'exec-and-forget open -a Bitwarden'
+alt-p = 'exec-and-forget /usr/bin/open -a Bitwarden'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#layout
 alt-slash = 'layout tiles horizontal vertical'
