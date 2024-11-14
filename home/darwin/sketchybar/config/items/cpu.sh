@@ -12,6 +12,6 @@ CPU=(
   padding_left=12
 )
 
-sketchybar --add item cpu right \
-           --set cpu "${CPU[@]}" 
+sketchybar  --add item cpu right          \
+            --set cpu "${CPU[@]}" 
 

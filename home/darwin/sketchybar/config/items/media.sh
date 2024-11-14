@@ -11,6 +11,6 @@ MEDIA=(
   script="$PLUGIN_DIR/media.sh"
 )
 
-sketchybar --add item media center \
-           --set media "${MEDIA[@]}" \
-           --subscribe media media_change 
+sketchybar  --add item media center                 \
+            --set media "${MEDIA[@]}"               \
+            --subscribe media media_change 

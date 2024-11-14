@@ -27,10 +27,9 @@ for m in $(/opt/homebrew/bin/aerospace list-monitors | awk '{print $1}'); do
       click_script="/opt/homebrew/bin/aerospace workspace $sid"
     )
     
-    # echo item_space.sh $m : $sid  >> ~/aaaa
 
-    sketchybar --add space space.$sid left \
-               --set space.$sid "${SPACE[@]}" 
+    sketchybar  --add space space.$sid left             \
+                --set space.$sid "${SPACE[@]}" 
 
     apps=$(/opt/homebrew/bin/aerospace list-windows --workspace $sid | awk -F'|' '{gsub(/^ *| *$/, "", $2); print $2}')
     
@@ -59,8 +58,8 @@ SPACES=(
   script="$PLUGIN_DIR/space.sh"
 )
 
-sketchybar --add bracket spaces '/space\..*/'  \
-           --set spaces "${SPACES[@]}"
+sketchybar  --add bracket spaces '/space\..*/'          \
+            --set spaces "${SPACES[@]}"
 
 
 SELECTED=(
@@ -88,14 +87,11 @@ SPACE_SEPARATOR=(
   icon.color=$WHITE
 )
 
-# sketchybar --add item space_creator left               \
-#            --set space_creator "${space_creator[@]}"   \
-#            --subscribe space_creator space_windows_change
-sketchybar --add item space_separator left               \
-           --set space_separator "${SPACE_SEPARATOR[@]}"  
+sketchybar  --add item space_separator left                             \
+            --set space_separator "${SPACE_SEPARATOR[@]}"  
 
-sketchybar --add item aerospace_listener center   \
-           --set aerospace_listener drawing=off  \
-           --set aerospace_listener script="$PLUGIN_DIR/spaces.sh" \
-           --subscribe aerospace_listener aerospace_workspace_change front_app_switched
+sketchybar  --add item aerospace_listener center                        \
+            --set aerospace_listener drawing=off                        \
+            --set aerospace_listener script="$PLUGIN_DIR/spaces.sh"     \
+            --subscribe aerospace_listener aerospace_workspace_change front_app_switched
 

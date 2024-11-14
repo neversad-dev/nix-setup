@@ -28,5 +28,5 @@ case ${CPU_PERCENT} in
     ICON_COLOR=$CPU_1
     ;;
 esac
- 
+
 sketchybar --set $NAME icon="$ICON" label="$CPU_PERCENT%" icon.color=${ICON_COLOR}

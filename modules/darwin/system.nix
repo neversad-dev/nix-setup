@@ -1,4 +1,8 @@
-{pkgs, pkgs-unstable, ...}:
+{
+  pkgs,
+  pkgs-unstable,
+  ...
+}:
 ###################################################################################
 #
 #  macOS's System configuration

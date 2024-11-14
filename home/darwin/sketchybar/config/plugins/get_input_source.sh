@@ -1,6 +1,5 @@
 #!/bin/sh
 
-# hangul and english item
 
 # Read the plist data
 plist_data=$(defaults read ~/Library/Preferences/com.apple.HIToolbox.plist AppleSelectedInputSources)

@@ -10,8 +10,8 @@ CALENDAR=(
   click_script="open "itsycal://date/now""
 )
 
-sketchybar --add item calendar right \
-           --set calendar "${CALENDAR[@]}" \
-           --subscribe calendar system_woke
+sketchybar  --add item calendar right           \
+            --set calendar "${CALENDAR[@]}"     \
+            --subscribe calendar system_woke
 
 

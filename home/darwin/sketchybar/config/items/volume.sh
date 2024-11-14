@@ -18,9 +18,9 @@ VOLUME_SLIDER=(
   slider.width=0
 )
 
-sketchybar --add slider volume_slider right \
-           --set volume_slider "${VOLUME_SLIDER[@]}" \
-           --subscribe volume_slider volume_change mouse.clicked 
+sketchybar  --add slider volume_slider right                        \
+            --set volume_slider "${VOLUME_SLIDER[@]}"               \
+            --subscribe volume_slider volume_change mouse.clicked 
 
 VOLUME_ICON=(
   icon.color=$GREEN
@@ -31,10 +31,10 @@ VOLUME_ICON=(
   click_script="$PLUGIN_DIR/volume_click.sh"
 )
 
-sketchybar --add item volume_icon right \
- --set volume_icon "${VOLUME_ICON[@]}" \
- --subscribe volume_icon volume_change 
+sketchybar  --add item volume_icon right                            \
+            --set volume_icon "${VOLUME_ICON[@]}"                   \
+            --subscribe volume_icon volume_change 
 
-sketchybar --add bracket volume volume_icon volume_slider  \
-           --set volume background.color=$BG_SEC_COLR 
+sketchybar  --add bracket volume volume_icon volume_slider          \
+            --set volume background.color=$BG_SEC_COLR 
 

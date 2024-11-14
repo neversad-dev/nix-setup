@@ -10,7 +10,7 @@ BATTERY=(
   label.align=right
 )
 
-sketchybar --add item battery right \
-           --set battery "${BATTERY[@]}" \
-           --subscribe battery system_woke power_source_change
+sketchybar  --add item battery right                              \
+            --set battery "${BATTERY[@]}"                         \
+            --subscribe battery system_woke power_source_change
 

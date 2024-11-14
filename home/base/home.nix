@@ -1,4 +1,8 @@
-{myvars, pkgs, ...}: {
+{
+  myvars,
+  pkgs,
+  ...
+}: {
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
   home = {
@@ -15,9 +19,8 @@
     stateVersion = "24.05";
 
     packages = [
-      pkgs.nil    # LSP for nix language
+      pkgs.nil # LSP for nix language
     ];
-
   };
 
   # Let Home Manager install and manage itself.

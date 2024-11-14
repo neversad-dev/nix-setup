@@ -11,6 +11,6 @@ FRONT_APP=(
   background.color=$LAVENDER
 )
 
-sketchybar --add item front_app left \
-           --set front_app "${FRONT_APP[@]}" \
-           --subscribe front_app front_app_switched 
+sketchybar  --add item front_app left                     \
+            --set front_app "${FRONT_APP[@]}"             \
+            --subscribe front_app front_app_switched 

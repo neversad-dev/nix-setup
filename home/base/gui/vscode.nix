@@ -1,9 +1,12 @@
-{ inputs, pkgs, pkgs-unstable, ...
+{
+  pkgs,
+  ...
 }: {
-  programs.vscode =  {
-      enable = true;
+  programs.vscode = {
+    enable = true;
 
-    extensions = with pkgs; with vscode-marketplace; [
+    extensions = with pkgs;
+    with vscode-marketplace; [
       # all the theme options will be available as overrides, these are defaults:
       (catppuccin-vsc.override {
         accent = "mauve";
@@ -13,15 +16,15 @@
         extraBordersEnabled = false;
         workbenchMode = "default";
         bracketMode = "rainbow";
-        colorOverrides = { };
-        customUIColors = { };
+        colorOverrides = {};
+        customUIColors = {};
       })
       catppuccin.catppuccin-vsc-icons
       esbenp.prettier-vscode
       christian-kohler.path-intellisense
       naumovs.color-highlight
       gruntfuggly.todo-tree
-      oderwat.indent-rainbow  # TODO: try catppuccin colors
+      oderwat.indent-rainbow # TODO: try catppuccin colors
       wmaurer.change-case
       ms-azuretools.vscode-docker
 
@@ -36,7 +39,7 @@
       mathiasfrohlich.kotlin
 
       nefrob.vscode-just-syntax # TODO: check if works
-      
+
       mads-hartmann.bash-ide-vscode
 
       redhat.vscode-xml
@@ -102,18 +105,17 @@
       "indentRainbow.lightIndicatorStyleLineWidth" = 1;
       # # the same colors as above but more visible
       "indentRainbow.colors" = [
-        "rgba(243, 139, 168, 0.3)"  # #f38ba8
-        "rgba(250, 181, 135, 0.3)"  # #fab387
-        "rgba(249, 226, 175, 0.3)"  # #f9e2af
-        "rgba(166, 227, 161, 0.3)"  # #a6e3a1
-        "rgba(137, 180, 250, 0.3)"  # #89b4fa
-        "rgba(203, 166, 247, 0.3)"   # #cba6f7
+        "rgba(243, 139, 168, 0.3)" # #f38ba8
+        "rgba(250, 181, 135, 0.3)" # #fab387
+        "rgba(249, 226, 175, 0.3)" # #f9e2af
+        "rgba(166, 227, 161, 0.3)" # #a6e3a1
+        "rgba(137, 180, 250, 0.3)" # #89b4fa
+        "rgba(203, 166, 247, 0.3)" # #cba6f7
       ];
       "editor.defaultFormatter" = "esbenp.prettier-vscode";
 
       "[markdown]" = {
         "editor.defaultFormatter" = "davidanson.vscode-markdownlint";
-      
       };
 
       "nix.enableLanguageServer" = true; # Enable LSP.

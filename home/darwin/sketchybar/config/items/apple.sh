@@ -33,19 +33,16 @@ APPLE_LOCK=(
   click_script="pmset displaysleepnow; open -a ScreenSaverEngine; $POPUP_OFF"
 )
 
-sketchybar --add item apple.logo$1 left                  \
-           --set apple.logo$1 "${APPLE_LOGO[@]}"         \
-                                                       \
-           --add item apple.prefs$1 popup.apple.logo$1     \
-           --set apple.prefs$1 "${APPLE_PREFS[@]}"       \
-                                                       \
-           --add item apple.activity$1 popup.apple.logo$1  \
-           --set apple.activity$1 "${APPLE_ACTIVITY[@]}" \
-                                                       \
-           --add item apple.lock$1 popup.apple.logo$1      \
-           --set apple.lock$1 "${APPLE_LOCK[@]}" 
+sketchybar  --add item apple.logo$1 left                          \
+            --set apple.logo$1 "${APPLE_LOGO[@]}"                 \
 
+sketchybar  --add item apple.prefs$1 popup.apple.logo$1           \
+            --set apple.prefs$1 "${APPLE_PREFS[@]}"               
 
+sketchybar  --add item apple.activity$1 popup.apple.logo$1        \
+            --set apple.activity$1 "${APPLE_ACTIVITY[@]}"         
 
+sketchybar  --add item apple.lock$1 popup.apple.logo$1            \
+            --set apple.lock$1 "${APPLE_LOCK[@]}" 
 
 
