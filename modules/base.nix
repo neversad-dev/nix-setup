@@ -48,6 +48,7 @@
     tree
     gnutar
     rsync
+    alejandra # The Uncompromising Nix Code Formatter
   ];
 
   users.users.${myvars.username} = {

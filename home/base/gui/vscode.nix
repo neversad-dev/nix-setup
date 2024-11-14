@@ -1,7 +1,4 @@
-{
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   programs.vscode = {
     enable = true;
 
@@ -24,15 +21,16 @@
       christian-kohler.path-intellisense
       naumovs.color-highlight
       gruntfuggly.todo-tree
-      oderwat.indent-rainbow # TODO: try catppuccin colors
+      oderwat.indent-rainbow
       wmaurer.change-case
       ms-azuretools.vscode-docker
 
-      bierner.github-markdown-preview
+      bierner.github-markdown-preview # TODO: check if works
       davidanson.vscode-markdownlint
 
       jeff-hykin.better-nix-syntax
       jnoortheen.nix-ide
+      kamadorueda.alejandra
       # nixpkgs-fmt
 
       redhat.java
@@ -115,16 +113,15 @@
       "editor.defaultFormatter" = "esbenp.prettier-vscode";
 
       "[markdown]" = {
-        "editor.defaultFormatter" = "davidanson.vscode-markdownlint";
+        "editor.defaultFormatter" = "DavidAnson.vscode-markdownlint";
       };
 
       "nix.enableLanguageServer" = true; # Enable LSP.
       "nix.serverPath" = "nil"; # The path to the LSP server executable.
-      "nix.formatterPath" = "nixpkgs-fmt";
       "[nix]" = {
-        "editor.defaultFormatter" = "jnoortheen.nix-ide";
-        "editor.tabSize" = 2;
+        "editor.defaultFormatter" = "kamadorueda.alejandra";
       };
+      "alejandra.program" = "alejandra";
     };
   };
 }

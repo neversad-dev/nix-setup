@@ -1,7 +1,4 @@
-{
-  nixpkgs,
-  ...
-} @ inputs: let
+{nixpkgs, ...} @ inputs: let
   inherit (inputs.nixpkgs) lib;
   mylib = import ../lib {inherit lib;};
   myvars = import ../vars;
