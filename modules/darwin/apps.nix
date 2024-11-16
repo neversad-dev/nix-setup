@@ -82,7 +82,6 @@
       "firefox"
       "google-chrome"
       "the-unarchiver"
-      "zed"
       "alt-tab"
       "hiddenbar"
       "aerospace"
