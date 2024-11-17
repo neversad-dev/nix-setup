@@ -44,6 +44,7 @@ in {
     newSession = false; # Automatically spawn a session if trying to attach and none are running.
     shortcut = "s"; # CTRL following by this key is used as the main shortcut.
     terminal = "tmux-256color";
+    secureSocket = false;
     plugins = with pkgs; [
       tmux-nerd-font-window-name
       {
@@ -97,9 +98,8 @@ in {
 
         '';
       }
-
-      tmuxPlugins.vim-tmux-navigator # TODO this overrides my system shortcuts. remove or replace them.
-      tmuxPlugins.cpu
+      tmuxPlugins.sensible
+      tmuxPlugins.vim-tmux-navigator
       tmuxPlugins.battery
       tmuxPlugins.better-mouse-mode
       {
