@@ -74,6 +74,8 @@
       "switchaudio-osx"
       "borders"
       "scrcpy"
+
+      "bitwarden-cli"
     ];
 
     # `brew install --cask`
