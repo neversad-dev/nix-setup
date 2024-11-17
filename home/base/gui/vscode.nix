@@ -1,7 +1,13 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  pkgs-unstable,
+  ...
+}: {
   programs.vscode = {
     enable = true;
+    package = pkgs-unstable.vscode;
 
+    mutableExtensionsDir = true;
     extensions = with pkgs;
     with vscode-marketplace; [
       # all the theme options will be available as overrides, these are defaults:
@@ -56,6 +62,10 @@
       mechatroner.rainbow-csv
       zainchen.json
       irongeek.vscode-env
+
+      ms-vscode-remote.remote-ssh
+      ms-vscode-remote.remote-ssh-edit
+      ms-vscode.remote-explorer
     ];
 
     userSettings = {
