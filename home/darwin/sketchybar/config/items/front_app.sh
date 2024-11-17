@@ -6,11 +6,11 @@ FRONT_APP=(
   click_script="open -a 'Mission Control'"
   icon.background.drawing=on
   label.font="$FONT:Bold:14.0"
-  label.color=$BG_PRI_COLR
+  label.color="$BG_PRI_COLR"
   label.padding_left=2
-  background.color=$LAVENDER
+  background.color="$LAVENDER"
 )
 
-sketchybar  --add item front_app left                     \
-            --set front_app "${FRONT_APP[@]}"             \
-            --subscribe front_app front_app_switched 
+sketchybar --add item front_app left \
+  --set front_app "${FRONT_APP[@]}" \
+  --subscribe front_app front_app_switched

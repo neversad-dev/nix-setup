@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # Read the plist data
 plist_data=$(defaults read ~/Library/Preferences/com.apple.HIToolbox.plist AppleSelectedInputSources)

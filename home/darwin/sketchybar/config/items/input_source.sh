@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 INPUT_SOURCE=(
     update_freq=1
@@ -12,8 +12,5 @@ INPUT_SOURCE=(
     script="$PLUGIN_DIR/get_input_source.sh"
 )
 
-sketchybar --add item input_source right
-sketchybar --set input_source "${INPUT_SOURCE[@]}"
-    
-
-
+sketchybar --add item input_source right \
+    --set input_source "${INPUT_SOURCE[@]}"

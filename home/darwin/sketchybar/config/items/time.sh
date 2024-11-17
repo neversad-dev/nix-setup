@@ -7,9 +7,8 @@ TIME=(
   label.align=center
   script="$PLUGIN_DIR/time.sh"
   click_script="$PLUGIN_DIR/zen.sh"
-  
+
 )
 
-sketchybar  --add item time right         \
-            --set time "${TIME[@]}" 
-
+sketchybar --add item time right \
+  --set time "${TIME[@]}"
