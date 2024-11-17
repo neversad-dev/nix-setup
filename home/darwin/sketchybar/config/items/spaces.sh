@@ -1,6 +1,7 @@
 #!/bin/bash
 
 sketchybar --add event aerospace_workspace_change
+sketchybar --add event aerospace_mode_change
 
 for m in $(/opt/homebrew/bin/aerospace list-monitors | awk '{print $1}'); do
   for i in $(/opt/homebrew/bin/aerospace list-workspaces --monitor $m); do
@@ -26,19 +27,17 @@ for m in $(/opt/homebrew/bin/aerospace list-monitors | awk '{print $1}'); do
       background.padding_right=0
       click_script="/opt/homebrew/bin/aerospace workspace $sid"
     )
-    
 
-    sketchybar  --add space space.$sid left             \
-                --set space.$sid "${SPACE[@]}" 
+    sketchybar --add space space.$sid left \
+      --set space.$sid "${SPACE[@]}"
 
     apps=$(/opt/homebrew/bin/aerospace list-windows --workspace $sid | awk -F'|' '{gsub(/^ *| *$/, "", $2); print $2}')
-    
+
     icon_strip=""
     if [ "${apps}" != "" ]; then
-      while read -r app
-      do
+      while read -r app; do
         icon_strip+="$($PLUGIN_DIR/icon_map_fn.sh "$app")"
-      done <<< "${apps}"
+      done <<<"${apps}"
     else
       icon_strip="—"
     fi
@@ -58,40 +57,42 @@ SPACES=(
   script="$PLUGIN_DIR/space.sh"
 )
 
-sketchybar  --add bracket spaces '/space\..*/'          \
-            --set spaces "${SPACES[@]}"
-
+sketchybar --add bracket spaces '/space\..*/' \
+  --set spaces "${SPACES[@]}"
 
 SELECTED=(
-    background.border_width=1
-    label.highlight=on
-    icon.highlight=on
+  background.border_width=1
+  label.highlight=on
+  icon.highlight=on
 )
 
 selected=$(/opt/homebrew/bin/aerospace list-workspaces --focused)
 
-sketchybar --set space.$selected "${SELECTED[@]}" 
-
-
-
+sketchybar --set space.$selected "${SELECTED[@]}"
 
 SPACE_SEPARATOR=(
-  icon=􀆊
-  padding_left=0
+  label=􀆊
+  padding_left=6
   padding_right=0
   display=active
-  icon.font="$FONT:Heavy:16.0"
-  icon.padding_left=6
-  icon.padding_right=8
-  label.drawing=off
+  label.font="$FONT:Heavy:16.0"
+  label.padding_left=0
+  label.padding_right=8
+  label.color=$WHITE
+  icon.drawing=off
+  icon.padding_left=0
+  icon.padding_right=0
   icon.color=$WHITE
+  icon.font="$FONT:Medium:12.0"
+  icon.y_offset=1
+  script="$PLUGIN_DIR/space_separator.sh"
 )
 
-sketchybar  --add item space_separator left                             \
-            --set space_separator "${SPACE_SEPARATOR[@]}"  
+sketchybar --add item space_separator left \
+  --set space_separator "${SPACE_SEPARATOR[@]}" \
+  --subscribe space_separator aerospace_mode_change
 
-sketchybar  --add item aerospace_listener center                        \
-            --set aerospace_listener drawing=off                        \
-            --set aerospace_listener script="$PLUGIN_DIR/spaces.sh"     \
-            --subscribe aerospace_listener aerospace_workspace_change front_app_switched
-
+sketchybar --add item aerospace_listener center \
+  --set aerospace_listener drawing=off \
+  --set aerospace_listener script="$PLUGIN_DIR/spaces.sh" \
+  --subscribe aerospace_listener aerospace_workspace_change front_app_switched
