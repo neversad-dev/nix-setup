@@ -234,6 +234,12 @@ run = 'move-node-to-workspace 2'
 if.app-id = 'com.softfever3d.orca-slicer'
 run = 'move-node-to-workspace 5' 
 
+## 3D
+
+[[on-window-detected]]
+if.app-id = 'com.autodesk.fusion360'
+run = 'move-node-to-workspace 6' 
+
 ## Browsers
 
 [[on-window-detected]]
