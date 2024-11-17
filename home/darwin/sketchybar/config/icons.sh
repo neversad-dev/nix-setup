@@ -1,5 +1,6 @@
 #!/bin/bash
-# General Icons
+
+# shellcheck disable=SC2034
 APPLE=􀣺
 PREFERENCES=􀺽
 ACTIVITY=􀒓

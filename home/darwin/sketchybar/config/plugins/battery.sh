@@ -1,12 +1,13 @@
 #!/bin/bash
 
+# shellcheck source=/dev/null
 source "$CONFIG_DIR/colors.sh"
 source "$CONFIG_DIR/icons.sh"
 
 PERCENTAGE=$(pmset -g batt | grep -Eo '[0-9]+%' | cut -d'%' -f1)
 CHARGING=$(pmset -g batt | grep 'AC Power')
 
-if [ $PERCENTAGE = "" ]; then
+if [ "$PERCENTAGE" = "" ]; then
   exit 0
 fi
 
@@ -38,4 +39,4 @@ if [[ $CHARGING != "" ]]; then
   ICON_COLOR=$BATTERY_2
 fi
 
-sketchybar --set $NAME icon="$ICON" label="${PERCENTAGE}%" icon.color=${ICON_COLOR}
+sketchybar --set "$NAME" icon="$ICON" label="${PERCENTAGE}%" icon.color="${ICON_COLOR}"

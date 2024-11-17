@@ -1,3 +1,5 @@
+#!/bin/bash
+
 function icon_map() {
   case "$1" in
   "Keynote" | "Keynote 讲演")
