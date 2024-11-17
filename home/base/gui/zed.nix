@@ -29,10 +29,9 @@
         dock = "right";
       };
 
-      theme = "Catppuccin Mocha";
+      theme = "Catppuccin Mocha (Blur)";
       autosave = "on_focus_change";
       tab_bar = {
-        show = true;
         show_nav_history_buttons = false;
       };
 

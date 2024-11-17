@@ -16,8 +16,8 @@
       enable_audio_bell = false;
       mouse_hide_wait = "-1.0";
       window_padding_width = 0;
-      background_opacity = "0.9";
-      background_blur = 8;
+      background_opacity = "0.8";
+      background_blur = 50;
       cursor_shape = "underline"; # block, beam, underline
       disable_ligatures = "never";
       tab_bar_style = "powerline"; # fade, slant, separator, powerline, custom, hidden
