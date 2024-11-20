@@ -3,8 +3,8 @@
 sketchybar --add event aerospace_workspace_change
 sketchybar --add event aerospace_mode_change
 
-for m in $(/opt/homebrew/bin/aerospace list-monitors | awk '{print $1}'); do
-  for i in $(/opt/homebrew/bin/aerospace list-workspaces --monitor $m); do
+for m in $(aerospace list-monitors | awk '{print $1}'); do
+  for i in $(aerospace list-workspaces --monitor $m); do
     sid=$i
     SPACE=(
       space="$sid"
@@ -25,13 +25,13 @@ for m in $(/opt/homebrew/bin/aerospace list-monitors | awk '{print $1}'); do
       background.border_color="$LAVENDER"
       background.padding_left=0
       background.padding_right=0
-      click_script="/opt/homebrew/bin/aerospace workspace $sid"
+      click_script="aerospace workspace $sid"
     )
 
     sketchybar --add space space."$sid" left \
       --set space."$sid" "${SPACE[@]}"
 
-    apps=$(/opt/homebrew/bin/aerospace list-windows --workspace "$sid" | awk -F'|' '{gsub(/^ *| *$/, "", $2); print $2}')
+    apps=$(aerospace list-windows --workspace "$sid" | awk -F'|' '{gsub(/^ *| *$/, "", $2); print $2}')
 
     icon_strip=""
     if [ "${apps}" != "" ]; then
@@ -45,7 +45,7 @@ for m in $(/opt/homebrew/bin/aerospace list-monitors | awk '{print $1}'); do
     sketchybar --set space."$sid" label="$icon_strip"
   done
 
-  for i in $(/opt/homebrew/bin/aerospace list-workspaces --monitor "$m" --empty); do
+  for i in $(aerospace list-workspaces --monitor "$m" --empty); do
     sketchybar --set space."$i" display=0
   done
 done
@@ -66,7 +66,7 @@ SELECTED=(
   icon.highlight=on
 )
 
-selected=$(/opt/homebrew/bin/aerospace list-workspaces --focused)
+selected=$(aerospace list-workspaces --focused)
 
 sketchybar --set space.$selected "${SELECTED[@]}"
 
@@ -86,6 +86,7 @@ SPACE_SEPARATOR=(
   icon.font="$FONT:Medium:12.0"
   icon.y_offset=1
   script="$PLUGIN_DIR/space_separator.sh"
+  click_script="aerospace reload-config"
 )
 
 sketchybar --add item space_separator left \
