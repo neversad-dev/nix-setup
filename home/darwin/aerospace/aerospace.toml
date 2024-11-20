@@ -8,14 +8,14 @@ after-login-command = []
 # sketchbar has a built-in detection of already running process,
 # so it won't be run twice on AeroSpace restart
 after-startup-command = [
-    'exec-and-forget /run/current-system/sw/bin/sketchybar',
+    'exec-and-forget sketchybar',
     'exec-and-forget borders active_color=0xFFfab387 inactive_color=0x00000000 width=5.0'
 
 ]
 
 # Notify Sketchybar about workspace change
 exec-on-workspace-change = ['/bin/bash', '-c',
-    '/run/current-system/sw/bin/sketchybar --trigger aerospace_workspace_change AEROSPACE_FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE AEROSPACE_PREV_WORKSPACE=$AEROSPACE_PREV_WORKSPACE'
+    'sketchybar --trigger aerospace_workspace_change AEROSPACE_FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE AEROSPACE_PREV_WORKSPACE=$AEROSPACE_PREV_WORKSPACE'
 ]
 
 # Start AeroSpace at login
@@ -176,10 +176,10 @@ alt-shift-r = 'reload-config'
 cmd-h = []     # Disable "hide application"
 cmd-alt-h = [] # Disable "hide others"
 
-alt-r = ['mode resize', 'exec-and-forget /run/current-system/sw/bin/sketchybar --trigger aerospace_mode_change AEROSPACE_MODE="r"']
+alt-r = ['mode resize', 'exec-and-forget sketchybar --trigger aerospace_mode_change AEROSPACE_MODE="r"']
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#mode
-alt-shift-semicolon = ['mode service', 'exec-and-forget /run/current-system/sw/bin/sketchybar --trigger aerospace_mode_change AEROSPACE_MODE="s"']
+alt-shift-semicolon = ['mode service', 'exec-and-forget sketchybar --trigger aerospace_mode_change AEROSPACE_MODE="s"']
 
 # Declare 'resize' binding mode
 [mode.resize.binding]
@@ -187,23 +187,23 @@ h = 'resize width -50'
 j = 'resize height +50'
 k = 'resize height -50'
 l = 'resize width +50'
-enter = ['mode main', 'exec-and-forget /run/current-system/sw/bin/sketchybar --trigger aerospace_mode_change']
-esc = ['mode main', 'exec-and-forget /run/current-system/sw/bin/sketchybar --trigger aerospace_mode_change']
+enter = ['mode main', 'exec-and-forget sketchybar --trigger aerospace_mode_change']
+esc = ['mode main', 'exec-and-forget sketchybar --trigger aerospace_mode_change']
 
 
 # 'service' binding mode declaration.
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
 [mode.service.binding]
-esc = ['mode main', 'exec-and-forget /run/current-system/sw/bin/sketchybar --trigger aerospace_mode_change']
+esc = ['mode main', 'exec-and-forget sketchybar --trigger aerospace_mode_change']
 
 
 # sticky is not yet supported https://github.com/nikitabobko/AeroSpace/issues/2
 #s = ['layout sticky tiling', 'mode main']
 
-alt-shift-h = ['join-with left', 'mode main', 'exec-and-forget /run/current-system/sw/bin/sketchybar --trigger aerospace_mode_change']
-alt-shift-j = ['join-with down', 'mode main', 'exec-and-forget /run/current-system/sw/bin/sketchybar --trigger aerospace_mode_change']
-alt-shift-k = ['join-with up', 'mode main', 'exec-and-forget /run/current-system/sw/bin/sketchybar --trigger aerospace_mode_change']
-alt-shift-l = ['join-with right', 'mode main', 'exec-and-forget /run/current-system/sw/bin/sketchybar --trigger aerospace_mode_change']
+alt-shift-h = ['join-with left', 'mode main', 'exec-and-forget sketchybar --trigger aerospace_mode_change']
+alt-shift-j = ['join-with down', 'mode main', 'exec-and-forget sketchybar --trigger aerospace_mode_change']
+alt-shift-k = ['join-with up', 'mode main', 'exec-and-forget sketchybar --trigger aerospace_mode_change']
+alt-shift-l = ['join-with right', 'mode main', 'exec-and-forget sketchybar --trigger aerospace_mode_change']
 
 
 # Window to workspace bindings

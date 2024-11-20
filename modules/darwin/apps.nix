@@ -80,6 +80,11 @@
       "imagemagick" # Tools and libraries to manipulate images in many formats
       "yt-dlp" # Feature-rich command-line audio/video downloader
       "ffmpeg"
+      {
+        name = "sketchybar";
+        start_service = true;
+        restart_service = "changed";
+      }
     ];
 
     # `brew install --cask`
