@@ -149,7 +149,7 @@
       };
 
       # true for Aerospace: https://nikitabobko.github.io/AeroSpace/guide#a-note-on-displays-have-separate-spaces
-      spaces.spans-displays = false; # false = each physical display has a separate space (Mac default) true = one space spans across all physical displays
+      spaces.spans-displays = true; # false = each physical display has a separate space (Mac default) true = one space spans across all physical displays
 
       loginwindow = {
         GuestEnabled = false; # disable guest user

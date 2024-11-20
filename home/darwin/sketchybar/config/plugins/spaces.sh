@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 
-AEROSPACE_FOCUSED_MONITOR=$(/opt/homebrew/bin/aerospace list-monitors --focused | awk '{print $1}')
-AEROSAPCE_WORKSPACE_FOCUSED_MONITOR=$(/opt/homebrew/bin/aerospace list-workspaces --monitor focused --empty no)
-AEROSPACE_EMPTY_WORKESPACE=$(/opt/homebrew/bin/aerospace list-workspaces --monitor focused --empty)
+AEROSPACE_FOCUSED_MONITOR=$(aerospace list-monitors --focused | awk '{print $1}')
+AEROSAPCE_WORKSPACE_FOCUSED_MONITOR=$(aerospace list-workspaces --monitor focused --empty no)
+AEROSPACE_EMPTY_WORKESPACE=$(aerospace list-workspaces --monitor focused --empty)
 
 reload_workspace_icon() {
-  apps=$(/opt/homebrew/bin/aerospace list-windows --workspace "$@" | awk -F'|' '{gsub(/^ *| *$/, "", $2); print $2}')
+  apps=$(aerospace list-windows --workspace "$@" | awk -F'|' '{gsub(/^ *| *$/, "", $2); print $2}')
 
   icon_strip=""
   if [ "${apps}" != "" ]; then
