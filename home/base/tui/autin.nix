@@ -8,8 +8,7 @@
       enable = true;
       enableZshIntegration = true;
       settings = {
-        enter_accept = false;
-        inline_height = 12;
+        enter_accept = true;
       };
     };
   };

@@ -32,6 +32,7 @@
       theme = "Catppuccin Mocha (Blur)";
       autosave = "on_focus_change";
       tab_bar = {
+        show = false;
         show_nav_history_buttons = false;
       };
 

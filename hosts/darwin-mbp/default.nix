@@ -1,7 +1,11 @@
-_: let
+{pkgs, ...}: let
   hostname = "mbp";
 in {
   networking.hostName = hostname;
   networking.computerName = hostname;
   system.defaults.smb.NetBIOSName = hostname;
+
+  environment.systemPackages = with pkgs; [
+    cmatrix
+  ];
 }

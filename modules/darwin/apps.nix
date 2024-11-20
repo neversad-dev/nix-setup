@@ -58,6 +58,7 @@
       Xcode = 497799835;
       wireguard = 1451685025;
       Bitwarden = 1352778147;
+      PDFgear = 6469021132;
     };
 
     taps = [
@@ -76,6 +77,9 @@
       "scrcpy"
 
       "bitwarden-cli"
+      "imagemagick" # Tools and libraries to manipulate images in many formats
+      "yt-dlp" # Feature-rich command-line audio/video downloader
+      "ffmpeg"
     ];
 
     # `brew install --cask`
@@ -108,6 +112,12 @@
       "orangedrangon-android-messages"
       "camo-studio"
       "obs"
+      "transnomino" # A batch rename utility for the Mac
+      "recut" # Remove silence from videos and automatically generate a cut list
+      "handbrake" # Open-source video transcoder available for Linux, Mac, and Windows
+      "imageoptim" # Tool to optimise images to a smaller size
+      "onlyoffice" # Document editor
+      "obsidian" # Knowledge base that works on top of a local folder of plain text Markdown files
     ];
   };
 }
