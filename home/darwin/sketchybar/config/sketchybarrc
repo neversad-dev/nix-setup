@@ -43,9 +43,10 @@ DEF_PROPS=(
   background.padding_left="$PADDING"
   background.height=22
   background.corner_radius=8
-  popup.background.corner_radius=9
   popup.blur_radius=20
   popup.y_offset=2
+  popup.background.corner_radius=9
+  popup.background.color="$BG_SEC_COLR"
   popup.background.shadow.drawing=on
 )
 
