@@ -4,7 +4,7 @@ sketchybar --add event aerospace_workspace_change
 sketchybar --add event aerospace_mode_change
 
 for m in $(aerospace list-monitors | awk '{print $1}'); do
-  for i in $(aerospace list-workspaces --monitor $m); do
+  for i in $(aerospace list-workspaces --monitor "$m"); do
     sid=$i
     SPACE=(
       space="$sid"
@@ -25,7 +25,7 @@ for m in $(aerospace list-monitors | awk '{print $1}'); do
       background.border_color="$LAVENDER"
       background.padding_left=0
       background.padding_right=0
-      click_script="aerospace workspace $sid"
+      click_script="$PLUGIN_DIR/space_click.sh"
     )
 
     sketchybar --add space space."$sid" left \
@@ -68,7 +68,7 @@ SELECTED=(
 
 selected=$(aerospace list-workspaces --focused)
 
-sketchybar --set space.$selected "${SELECTED[@]}"
+sketchybar --set space."$selected" "${SELECTED[@]}"
 
 SPACE_SEPARATOR=(
   label=􀆊
