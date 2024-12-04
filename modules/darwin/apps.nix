@@ -101,7 +101,6 @@
       "viber"
       "signal"
 
-      "chatgpt"
       "itsycal"
       "iina"
       "raycast" # (HotKey: alt/option + space)search, calculate and run scripts(with many plugins)
