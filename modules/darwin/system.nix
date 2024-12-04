@@ -183,7 +183,7 @@
             "32" = {
               enabled = true; # Enable the new binding
               value = {
-                parameters = [107 40 262144];
+                parameters = [107 40 1310720];
                 type = "standard";
               };
             };
@@ -192,7 +192,7 @@
             "33" = {
               enabled = true; # Enable the new binding
               value = {
-                parameters = [106 38 262144];
+                parameters = [106 38 1310720];
                 type = "standard";
               };
             };
