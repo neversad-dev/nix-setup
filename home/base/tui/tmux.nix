@@ -98,7 +98,6 @@ in {
 
         '';
       }
-      tmuxPlugins.sensible
       tmuxPlugins.vim-tmux-navigator
       tmuxPlugins.battery
       tmuxPlugins.better-mouse-mode
