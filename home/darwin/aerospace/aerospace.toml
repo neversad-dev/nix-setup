@@ -111,7 +111,7 @@ alt-v = 'exec-and-forget /usr/bin/open -a viber'
 
 alt-c = '''exec-and-forget /usr/bin/open -a "Visual Studio Code"'''
 
-alt-o = 'exec-and-forget /usr/bin/open -a OrcaSlicer'
+alt-o = 'exec-and-forget /usr/bin/open -a Obsidian'
 
 alt-z = 'exec-and-forget /usr/bin/open -a zed'
 
