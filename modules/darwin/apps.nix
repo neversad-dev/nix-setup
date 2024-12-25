@@ -122,6 +122,7 @@
       "imageoptim" # Tool to optimise images to a smaller size
       "onlyoffice" # Document editor
       "obsidian" # Knowledge base that works on top of a local folder of plain text Markdown files
+      "android-studio"
     ];
   };
 }
