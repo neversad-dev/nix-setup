@@ -1,4 +1,4 @@
-{pkgs, ...}: let
+{...}: let
   hostname = "mbp";
 in {
   networking.hostName = hostname;

@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{...}: {
   programs = {
     # terminal file manager
     yazi = {
