@@ -88,6 +88,7 @@
 
     # `brew install --cask`
     casks = [
+      "ghostty"
       "firefox"
       "google-chrome"
       "the-unarchiver"

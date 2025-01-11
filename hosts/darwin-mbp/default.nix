@@ -5,7 +5,4 @@ in {
   networking.computerName = hostname;
   system.defaults.smb.NetBIOSName = hostname;
 
-  environment.systemPackages = with pkgs; [
-    cmatrix
-  ];
 }

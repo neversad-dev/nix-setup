@@ -14,7 +14,6 @@
 
   environment.systemPackages = with pkgs; [
     git # used by nix flakes
-
     just # a command runner like make, but simpler
 
   ];
