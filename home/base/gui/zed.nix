@@ -1,7 +1,7 @@
-{pkgs-unstable, ...}: {
+{pkgs, ...}: {
   programs.zed-editor = {
     enable = true;
-    package = pkgs-unstable.pkgs.zed-editor;
+    package = pkgs.pkgs.zed-editor;
 
     extensions = [
       "catppuccin"
@@ -29,7 +29,6 @@
         dock = "right";
       };
 
-      theme = "Catppuccin Mocha (Blur)";
       autosave = "on_focus_change";
       tab_bar = {
         show = false;
