@@ -99,7 +99,7 @@ PATH = '/opt/homebrew/bin:/opt/homebrew/sbin:$${PATH}'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#exec-and-forget
 # You can uncomment the following lines to open up terminal with alt + enter shortcut (like in i3)
-alt-enter = 'exec-and-forget /usr/bin/open -a kitty'
+alt-enter = 'exec-and-forget /usr/bin/open -a ghostty'
 
 alt-w = 'exec-and-forget /usr/bin/open -a firefox'
 
@@ -221,7 +221,7 @@ run = 'move-node-to-workspace 1'
 ## Terminals
 
 [[on-window-detected]]
-if.app-id = 'net.kovidgoyal.kitty'
+if.app-id = 'com.mitchellh.ghostty'
 run = 'move-node-to-workspace 2' 
 
 [[on-window-detected]]
