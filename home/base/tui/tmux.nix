@@ -1,7 +1,4 @@
-{
-  pkgs,
-  ...
-}: let
+{pkgs, ...}: let
   tmux-nerd-font-window-name =
     pkgs.tmuxPlugins.mkTmuxPlugin
     {
@@ -110,3 +107,4 @@ in {
     '';
   };
 }
+

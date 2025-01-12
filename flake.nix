@@ -68,8 +68,5 @@
       # for example:
       # inputs.obsidian-nvim.follows = "obsidian-nvim"; # <- this will use the obsidian-nvim from your inputs
     };
-
-
-    
   };
 }
