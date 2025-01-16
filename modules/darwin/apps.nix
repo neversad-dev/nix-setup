@@ -99,6 +99,7 @@
       # messengers
       "viber"
       "signal"
+      "zoom"
 
       "itsycal"
       "iina"
