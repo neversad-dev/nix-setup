@@ -1,5 +1,5 @@
 {
-  username = "tinker";
-  userfullname = "tinker";
-  useremail = "tinker@null.computer";
+  username = "neversad";
+  userfullname = "neversad";
+  useremail = "neversad@null.computer";
 }

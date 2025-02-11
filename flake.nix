@@ -1,5 +1,5 @@
 {
-  description = "Nix for macOS configuration";
+  description = "My Nix configuration for MacOS and NixOS";
 
   outputs = inputs: import ./outputs inputs;
 

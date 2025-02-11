@@ -33,8 +33,8 @@
       pull.rebase = true;
 
       url = {
-        "ssh://git@github.com/GiveNoCode" = {
-          insteadOf = "https://github.com/GiveNoCode";
+        "ssh://git@github.com/neversad-dev" = {
+          insteadOf = "https://github.com/neversad-dev";
         };
       };
 
