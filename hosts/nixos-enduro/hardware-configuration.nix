@@ -8,10 +8,22 @@
     [ (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
+    # Use the systemd-boot EFI boot loader.
+    boot = {
+      kernelPackages = pkgs.linuxPackages_latest;
+      loader = {
+        systemd-boot.enable = true;
+        efi.canTouchEfiVariables = true;
+        timeout = 1;
+      };
+    };
+
   boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "nvme" "usbhid" "usb_storage" "sd_mod" "rtsx_usb_sdmmc" ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ ];
   boot.extraModulePackages = [ ];
+  # clear /tmp on boot to get a stateless /tmp directory.
+  boot.tmp.cleanOnBoot = true;
 
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/f4f4953e-3e8c-4266-8a16-07fbb3354b97";
