@@ -47,7 +47,14 @@
   #================================= Misc =================================
 
   services = {
-    printing.enable = true; # Enable CUPS to print documents.
+    printing = {
+      enable = true; # Enable CUPS to print documents.
+      drivers = with pkgs; [
+        gutenprint # Open-source printer drivers for many Epson printers
+        epson-escpr # Epson ESC/P-R printer driver (for inkjet printers)
+      ];
+    };
+    
     geoclue2.enable = true; # Enable geolocation services.
 
     udev.packages = with pkgs; [
@@ -56,6 +63,7 @@
       openocd # required by paltformio, see https://github.com/NixOS/nixpkgs/issues/224895
       android-udev-rules # required by adb
       openfpgaloader
+      epson-escpr  # Make sure that USB support is enabled for CUPS
     ];
 
     # A key remapping daemon for linux.

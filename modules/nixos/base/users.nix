@@ -16,6 +16,7 @@
       "audio"
       "networkmanager"
       "lp"
+      "input"
       "scanner" ];
     initialPassword = "password";
   };

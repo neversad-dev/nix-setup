@@ -6,15 +6,11 @@ in {
 
   imports = [
     ./hardware-configuration.nix
-    ./configuration.nix
   ];
 
 
   networking = {
       inherit hostName;
-
-      # desktop need its cli for status bar
-      networkmanager.enable = true;
     };
 
     # This value determines the NixOS release from which the default

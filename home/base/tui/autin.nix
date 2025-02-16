@@ -6,7 +6,6 @@
     # synchronisation of your history between machines, via an Atuin server.
     atuin = {
       enable = true;
-      enableZshIntegration = true;
       settings = {
         enter_accept = true;
       };

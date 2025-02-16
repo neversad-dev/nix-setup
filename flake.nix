@@ -52,6 +52,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+
     # Neovim
     # Optional, if you intend to follow nvf's obsidian-nvim input
     # you must also add it as a flake input.

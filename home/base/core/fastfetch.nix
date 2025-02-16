@@ -45,5 +45,11 @@
     '';
   };
 
+  programs.bash = {
+    initExtra = ''
+      fastfetch
+    '';
+  };
+
 
 }

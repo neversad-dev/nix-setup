@@ -6,6 +6,7 @@
     cmatrix
     thefuck
     yq
+    python3
 
 
 
