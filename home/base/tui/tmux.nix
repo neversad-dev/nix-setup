@@ -1,4 +1,4 @@
-{pkgs, ...}: let
+{pkgs, pkgs-unstable, ...}: let
   tmux-nerd-font-window-name =
     pkgs.tmuxPlugins.mkTmuxPlugin
     {
@@ -12,6 +12,19 @@
         sha256 = "sha256-bnlOAfdBv5Rg4z1hu1jtdx5oZ6kAZE40K4zqLxmyYQE=";
       };
     };
+   tmux-git-autofetch =
+      pkgs.tmuxPlugins.mkTmuxPlugin
+      {
+        pluginName = "tmux-git-autofetch";
+        version = "master";
+        rtpFilePath = "git-autofetch.tmux";
+        src = pkgs.fetchFromGitHub {
+          owner = "thepante";
+          repo = "tmux-git-autofetch";
+          rev = "f1887ed0eb3f95e138394f401dd673144f9aa94c";
+          sha256 = "0dwyy0p616syp2mm0qjsh9zn1sbs258lrqg85a0hwipxvcqpw6x0";
+        };
+      };
 in {
   catppuccin = {
     tmux.enable = false; # load plugin separately for latest version
@@ -32,6 +45,7 @@ in {
     secureSocket = false;
     plugins = with pkgs; [
       tmux-nerd-font-window-name
+      tmux-git-autofetch
       {
         plugin = tmuxPlugins.catppuccin.overrideAttrs (_: {
           version = "v2.1.0";
@@ -79,8 +93,22 @@ in {
 
         '';
       }
+      {
+        plugin = tmuxPlugins.tmux-fzf;
+        extraConfig = ''
+          TMUX_FZF_LAUNCH_KEY="space"
+        '';
+      }
       tmuxPlugins.better-mouse-mode
       tmuxPlugins.vim-tmux-navigator
+      tmuxPlugins.resurrect
+      {
+        plugin = tmuxPlugins.continuum;
+        extraConfig = ''
+          set -g @continuum-restore 'on'
+          set -g @continuum-boot 'off'
+        '';
+      }
     ];
     extraConfig = ''
 
@@ -107,4 +135,3 @@ in {
     '';
   };
 }
-

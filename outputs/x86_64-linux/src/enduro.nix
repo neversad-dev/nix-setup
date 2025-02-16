@@ -27,8 +27,23 @@
     ];
   };
 
+  modules-hyprland = {
+    nixos-modules =
+      [
+        {
+          modules.desktop.xorg.enable = false;
+          modules.desktop.wayland.enable = true;
+        }
+      ]
+      ++ base-modules.nixos-modules;
+    home-modules =
+    [
+       {modules.desktop.hyprland.enable = true;}
+    ]
+    ++ base-modules.home-modules;
+  };
 in {
   nixosConfigurations = {
-    "${name}" = mylib.nixosSystem (base-modules // args);
+    "${name}" = mylib.nixosSystem (modules-hyprland // args);
   };
 }

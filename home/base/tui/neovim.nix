@@ -1,31 +1,30 @@
 {
-#   pkgs,
-#   nvf,
-#   ...
-# }: {
-#   imports = [
-#     nvf.homeManagerModules.default
-#   ];
-#
-#   programs.nvf = {
-#     enable = true;
-#     defaultEditor = true;
-#
-#     settings.vim = {
-#       # Open Neovim whenever "vi" or "vim" command is executed
-#       viAlias = true;
-#       vimAlias = true;
-#
-#       enableLuaLoader = true;
-#
-#       globals.mapleader = " ";
-#       lineNumberMode = "relNumber";
-#       spellcheck.enable = true;
-#       preventJunkFiles = true;
-#       syntaxHighlighting = true;
-#       useSystemClipboard = true;
-#       disableArrows = false;
-#
+   pkgs,
+   nvf,
+   ...
+ }: {
+   imports = [
+     nvf.homeManagerModules.default
+   ];
+
+   programs.nvf = {
+     enable = true;
+     defaultEditor = true;
+
+     settings.vim = {
+       # Open Neovim whenever "vi" or "vim" command is executed
+       viAlias = true;
+       vimAlias = true;
+
+       enableLuaLoader = true;
+
+       globals.mapleader = " ";
+       lineNumberMode = "relNumber";
+       spellcheck.enable = true;
+       preventJunkFiles = true;
+       syntaxHighlighting = true;
+       useSystemClipboard = true;
+
 #       visuals = {
 #         nvim-web-devicons.enable = true;
 #         nvim-scrollbar.enable = true;
@@ -71,14 +70,14 @@
 #           "zM".action = "require('ufo').closeAllFolds";
 #         };
 #       };
-#
-#       theme = {
-#         enable = true;
-#         name = "catppuccin";
-#         style = "mocha";
-#         transparent = false;
-#       };
-#
+
+       theme = {
+         enable = true;
+         name = "catppuccin";
+         style = "mocha";
+         transparent = false;
+       };
+
 #       notify.nvim-notify.enable = true;
 #       ui = {
 #         noice.enable = true;
@@ -217,6 +216,6 @@
 #           setup = "require('ufo').setup()";
 #         };
 #       };
-#     };
-#   };
+     };
+   };
 }
